@@ -28,6 +28,11 @@
 		CA61D94927564A4900B777A2 /* GBShopDKTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA61D94827564A4900B777A2 /* GBShopDKTests.swift */; };
 		CA61D95327564A4900B777A2 /* GBShopDKUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA61D95227564A4900B777A2 /* GBShopDKUITests.swift */; };
 		CA61D95527564A4900B777A2 /* GBShopDKUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA61D95427564A4900B777A2 /* GBShopDKUITestsLaunchTests.swift */; };
+		CAAFF014275CF8C200BE30E8 /* LogoutResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAAFF013275CF8C200BE30E8 /* LogoutResult.swift */; };
+		CAAFF016275CFC0200BE30E8 /* RegistrationUserResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAAFF015275CFC0200BE30E8 /* RegistrationUserResult.swift */; };
+		CAAFF018275CFC1300BE30E8 /* ChangeUserDataResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAAFF017275CFC1300BE30E8 /* ChangeUserDataResult.swift */; };
+		CAAFF01A275CFD9A00BE30E8 /* RegistrationAndDataChangesFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAAFF019275CFD9A00BE30E8 /* RegistrationAndDataChangesFactory.swift */; };
+		CAAFF01C275CFF5100BE30E8 /* RegistrationAndChanges.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAAFF01B275CFF5100BE30E8 /* RegistrationAndChanges.swift */; };
 		D304BA7411EDF6B4B7F28492 /* Pods_GBShopDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F73ED625FCD0F44BBFDF31A4 /* Pods_GBShopDK.framework */; };
 /* End PBXBuildFile section */
 
@@ -78,6 +83,11 @@
 		CA61D95227564A4900B777A2 /* GBShopDKUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GBShopDKUITests.swift; sourceTree = "<group>"; };
 		CA61D95427564A4900B777A2 /* GBShopDKUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GBShopDKUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		CA8C27AAD8C0295CEEE3D457 /* Pods-GBShopDKTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GBShopDKTests.release.xcconfig"; path = "Target Support Files/Pods-GBShopDKTests/Pods-GBShopDKTests.release.xcconfig"; sourceTree = "<group>"; };
+		CAAFF013275CF8C200BE30E8 /* LogoutResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutResult.swift; sourceTree = "<group>"; };
+		CAAFF015275CFC0200BE30E8 /* RegistrationUserResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationUserResult.swift; sourceTree = "<group>"; };
+		CAAFF017275CFC1300BE30E8 /* ChangeUserDataResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeUserDataResult.swift; sourceTree = "<group>"; };
+		CAAFF019275CFD9A00BE30E8 /* RegistrationAndDataChangesFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationAndDataChangesFactory.swift; sourceTree = "<group>"; };
+		CAAFF01B275CFF5100BE30E8 /* RegistrationAndChanges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationAndChanges.swift; sourceTree = "<group>"; };
 		EA064DF468134A01F77326FA /* Pods_GBShopDKTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GBShopDKTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F73ED625FCD0F44BBFDF31A4 /* Pods_GBShopDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GBShopDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE615AF1FC1DEE817160C70C /* Pods-GBShopDK-GBShopDKUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GBShopDK-GBShopDKUITests.debug.xcconfig"; path = "Target Support Files/Pods-GBShopDK-GBShopDKUITests/Pods-GBShopDK-GBShopDKUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -131,7 +141,6 @@
 				3D2221A0762FCEAF2D16B8F0 /* Pods-GBShopDKTests.debug.xcconfig */,
 				CA8C27AAD8C0295CEEE3D457 /* Pods-GBShopDKTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -151,8 +160,10 @@
 			isa = PBXGroup;
 			children = (
 				CA4FA061275A3CDF00E8BF6B /* AuthRequestFactory.swift */,
-				CA4FA063275A3CED00E8BF6B /* Auth.swift */,
+				CAAFF019275CFD9A00BE30E8 /* RegistrationAndDataChangesFactory.swift */,
 				CA4FA065275A3CFF00E8BF6B /* RequestFactory.swift */,
+				CA4FA063275A3CED00E8BF6B /* Auth.swift */,
+				CAAFF01B275CFF5100BE30E8 /* RegistrationAndChanges.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -232,7 +243,10 @@
 			isa = PBXGroup;
 			children = (
 				CA4FA05C275A3CB300E8BF6B /* LoginResult.swift */,
+				CAAFF013275CF8C200BE30E8 /* LogoutResult.swift */,
 				CA4FA05E275A3CBB00E8BF6B /* User.swift */,
+				CAAFF015275CFC0200BE30E8 /* RegistrationUserResult.swift */,
+				CAAFF017275CFC1300BE30E8 /* ChangeUserDataResult.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -519,13 +533,18 @@
 			files = (
 				CA4FA062275A3CDF00E8BF6B /* AuthRequestFactory.swift in Sources */,
 				CA4FA05B275A3C4B00E8BF6B /* RequestRouter.swift in Sources */,
+				CAAFF014275CF8C200BE30E8 /* LogoutResult.swift in Sources */,
+				CAAFF018275CFC1300BE30E8 /* ChangeUserDataResult.swift in Sources */,
 				CA4FA059275A3C2E00E8BF6B /* AbstractRequestFactory.swift in Sources */,
 				CA4FA066275A3CFF00E8BF6B /* RequestFactory.swift in Sources */,
 				CA4FA055275A3AF400E8BF6B /* ErrorParser.swift in Sources */,
 				CA4FA057275A3C1800E8BF6B /* ResponseCodable.swift in Sources */,
+				CAAFF01C275CFF5100BE30E8 /* RegistrationAndChanges.swift in Sources */,
 				CA61D93627564A4700B777A2 /* ViewController.swift in Sources */,
+				CAAFF016275CFC0200BE30E8 /* RegistrationUserResult.swift in Sources */,
 				CA61D93227564A4700B777A2 /* AppDelegate.swift in Sources */,
 				CA4FA05D275A3CB300E8BF6B /* LoginResult.swift in Sources */,
+				CAAFF01A275CFD9A00BE30E8 /* RegistrationAndDataChangesFactory.swift in Sources */,
 				CA61D93427564A4700B777A2 /* SceneDelegate.swift in Sources */,
 				CA4FA05F275A3CBB00E8BF6B /* User.swift in Sources */,
 				CA4FA053275A3ACE00E8BF6B /* AbstractErrorParser.swift in Sources */,
