@@ -9,7 +9,6 @@
     }
   ],
   "defaultOptions" : {
-    "codeCoverage" : false,
     "targetForVariableExpansion" : {
       "containerPath" : "container:GBShopDK.xcodeproj",
       "identifier" : "CA61D92D27564A4700B777A2",
