@@ -13,7 +13,7 @@ class ProductsRequests: AbstractRequestFactory {
     let errorParser: AbstractErrorParser
     let sessionManager: Session
     let queue: DispatchQueue
-    let baseUrl = URL(string: "https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses/")!
+    let baseUrl = URL(string: "https://intense-retreat-87800.herokuapp.com/")!
     
     init (errorParser: AbstractErrorParser, sessionManager: Session, queue: DispatchQueue = DispatchQueue.global(qos: .utility)) {
         self.errorParser = errorParser
@@ -23,13 +23,13 @@ class ProductsRequests: AbstractRequestFactory {
 }
 
 extension ProductsRequests:  ProductsRequestFactory {
-    func productList(pageNumber: Int, idCategory: Int, completionHandler: @escaping (AFDataResponse<[ProductList]>) -> Void) {
-        let requestModel = ProductListRequest(baseUrl: baseUrl, pageNumber: pageNumber, idCategory: idCategory)
+    func productList(pageNumber: Int, categoryId: Int, completionHandler: @escaping (AFDataResponse<ProductList>) -> Void) {
+        let requestModel = ProductListRequest(baseUrl: baseUrl, pageNumber: pageNumber, categoryId: categoryId)
         self.request(request: requestModel, completionHandler: completionHandler)
     }
     
-    func product(idProduct: Int, completionHandler: @escaping (AFDataResponse<Product>) -> Void) {
-        let requestModel = ProductRequest(baseUrl: baseUrl, idProduct: idProduct)
+    func product(productId: Int, completionHandler: @escaping (AFDataResponse<Product>) -> Void) {
+        let requestModel = ProductRequest(baseUrl: baseUrl, productId: productId)
         self.request(request: requestModel, completionHandler: completionHandler)
     }
 }
@@ -37,16 +37,16 @@ extension ProductsRequests:  ProductsRequestFactory {
 extension ProductsRequests {
     struct ProductListRequest: RequestRouter {
         let baseUrl: URL
-        let method: HTTPMethod = .get
-        let path: String = "catalogData.json"
+        let method: HTTPMethod = .post
+        let path: String = "productList"
         
         let pageNumber: Int
-        let idCategory: Int
+        let categoryId: Int
         
         var parameters: Parameters? {
             return [
-                "page_number": pageNumber,
-                "id_category": idCategory,
+                "pageNumber": pageNumber,
+                "categoryId": categoryId
             ]
         }
     }
@@ -55,14 +55,14 @@ extension ProductsRequests {
 extension ProductsRequests {
     struct ProductRequest: RequestRouter {
         let baseUrl: URL
-        let method: HTTPMethod = .get
-        let path: String = "getGoodById.json"
+        let method: HTTPMethod = .post
+        let path: String = "product"
         
-        let idProduct: Int
+        let productId: Int
         
         var parameters: Parameters? {
             return [
-                "id_product": idProduct,
+                "productId": productId
             ]
         }
     }
