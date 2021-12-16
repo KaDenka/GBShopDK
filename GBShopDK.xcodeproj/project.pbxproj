@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		273355250F42CCDA17AE17FC /* Pods_GBShopDK_GBShopDKUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FC5B5B7510399D74B261C2C /* Pods_GBShopDK_GBShopDKUITests.framework */; };
 		68023FB67F0E4FDE30489BF6 /* Pods_GBShopDKTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA064DF468134A01F77326FA /* Pods_GBShopDKTests.framework */; };
+		CA0BBE15276B22CE002CA3FC /* ProductReviewsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0BBE14276B22CE002CA3FC /* ProductReviewsList.swift */; };
+		CA0BBE17276B2309002CA3FC /* ProductReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0BBE16276B2309002CA3FC /* ProductReview.swift */; };
+		CA0BBE19276B2C96002CA3FC /* GBShopProductTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0BBE18276B2C96002CA3FC /* GBShopProductTests.swift */; };
 		CA4FA053275A3ACE00E8BF6B /* AbstractErrorParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4FA052275A3ACE00E8BF6B /* AbstractErrorParser.swift */; };
 		CA4FA055275A3AF400E8BF6B /* ErrorParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4FA054275A3AF400E8BF6B /* ErrorParser.swift */; };
 		CA4FA057275A3C1800E8BF6B /* ResponseCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4FA056275A3C1800E8BF6B /* ResponseCodable.swift */; };
@@ -25,7 +28,7 @@
 		CA61D93927564A4700B777A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA61D93727564A4700B777A2 /* Main.storyboard */; };
 		CA61D93B27564A4900B777A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA61D93A27564A4900B777A2 /* Assets.xcassets */; };
 		CA61D93E27564A4900B777A2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA61D93C27564A4900B777A2 /* LaunchScreen.storyboard */; };
-		CA61D94927564A4900B777A2 /* GBShopDKTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA61D94827564A4900B777A2 /* GBShopDKTests.swift */; };
+		CA61D94927564A4900B777A2 /* GBShopUserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA61D94827564A4900B777A2 /* GBShopUserTests.swift */; };
 		CA61D95327564A4900B777A2 /* GBShopDKUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA61D95227564A4900B777A2 /* GBShopDKUITests.swift */; };
 		CA61D95527564A4900B777A2 /* GBShopDKUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA61D95427564A4900B777A2 /* GBShopDKUITestsLaunchTests.swift */; };
 		CAAFF014275CF8C200BE30E8 /* DefaultResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAAFF013275CF8C200BE30E8 /* DefaultResult.swift */; };
@@ -61,6 +64,9 @@
 		7FC5B5B7510399D74B261C2C /* Pods_GBShopDK_GBShopDKUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GBShopDK_GBShopDKUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		956E1E34F69CCAB33DB1D7F7 /* Pods-GBShopDK-GBShopDKUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GBShopDK-GBShopDKUITests.release.xcconfig"; path = "Target Support Files/Pods-GBShopDK-GBShopDKUITests/Pods-GBShopDK-GBShopDKUITests.release.xcconfig"; sourceTree = "<group>"; };
 		A8D4A4BE4DCD43FA19A9FC78 /* Pods-GBShopDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GBShopDK.debug.xcconfig"; path = "Target Support Files/Pods-GBShopDK/Pods-GBShopDK.debug.xcconfig"; sourceTree = "<group>"; };
+		CA0BBE14276B22CE002CA3FC /* ProductReviewsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductReviewsList.swift; sourceTree = "<group>"; };
+		CA0BBE16276B2309002CA3FC /* ProductReview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductReview.swift; sourceTree = "<group>"; };
+		CA0BBE18276B2C96002CA3FC /* GBShopProductTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GBShopProductTests.swift; sourceTree = "<group>"; };
 		CA4FA052275A3ACE00E8BF6B /* AbstractErrorParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractErrorParser.swift; sourceTree = "<group>"; };
 		CA4FA054275A3AF400E8BF6B /* ErrorParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorParser.swift; sourceTree = "<group>"; };
 		CA4FA056275A3C1800E8BF6B /* ResponseCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseCodable.swift; sourceTree = "<group>"; };
@@ -80,7 +86,7 @@
 		CA61D93D27564A4900B777A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CA61D93F27564A4900B777A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CA61D94427564A4900B777A2 /* GBShopDKTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GBShopDKTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		CA61D94827564A4900B777A2 /* GBShopDKTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GBShopDKTests.swift; sourceTree = "<group>"; };
+		CA61D94827564A4900B777A2 /* GBShopUserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GBShopUserTests.swift; sourceTree = "<group>"; };
 		CA61D94E27564A4900B777A2 /* GBShopDKUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GBShopDKUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA61D95227564A4900B777A2 /* GBShopDKUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GBShopDKUITests.swift; sourceTree = "<group>"; };
 		CA61D95427564A4900B777A2 /* GBShopDKUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GBShopDKUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -214,7 +220,8 @@
 		CA61D94727564A4900B777A2 /* GBShopDKTests */ = {
 			isa = PBXGroup;
 			children = (
-				CA61D94827564A4900B777A2 /* GBShopDKTests.swift */,
+				CA61D94827564A4900B777A2 /* GBShopUserTests.swift */,
+				CA0BBE18276B2C96002CA3FC /* GBShopProductTests.swift */,
 			);
 			path = GBShopDKTests;
 			sourceTree = "<group>";
@@ -257,6 +264,8 @@
 				CA4FA05E275A3CBB00E8BF6B /* User.swift */,
 				CABF860F275F97DC00870B23 /* ProductList.swift */,
 				CABF8611275F989A00870B23 /* Product.swift */,
+				CA0BBE14276B22CE002CA3FC /* ProductReviewsList.swift */,
+				CA0BBE16276B2309002CA3FC /* ProductReview.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -555,6 +564,7 @@
 				CA4FA05B275A3C4B00E8BF6B /* RequestRouter.swift in Sources */,
 				CAAFF014275CF8C200BE30E8 /* DefaultResult.swift in Sources */,
 				CABF8614275F9A0D00870B23 /* ProductsRequestFactory.swift in Sources */,
+				CA0BBE15276B22CE002CA3FC /* ProductReviewsList.swift in Sources */,
 				CA4FA059275A3C2E00E8BF6B /* AbstractRequestFactory.swift in Sources */,
 				CA4FA066275A3CFF00E8BF6B /* RequestFactory.swift in Sources */,
 				CA4FA055275A3AF400E8BF6B /* ErrorParser.swift in Sources */,
@@ -570,6 +580,7 @@
 				CA4FA053275A3ACE00E8BF6B /* AbstractErrorParser.swift in Sources */,
 				CABF8612275F989A00870B23 /* Product.swift in Sources */,
 				CABF8610275F97DC00870B23 /* ProductList.swift in Sources */,
+				CA0BBE17276B2309002CA3FC /* ProductReview.swift in Sources */,
 				CA4FA064275A3CED00E8BF6B /* Auth.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -578,7 +589,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CA61D94927564A4900B777A2 /* GBShopDKTests.swift in Sources */,
+				CA0BBE19276B2C96002CA3FC /* GBShopProductTests.swift in Sources */,
+				CA61D94927564A4900B777A2 /* GBShopUserTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
