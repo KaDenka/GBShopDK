@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		273355250F42CCDA17AE17FC /* Pods_GBShopDK_GBShopDKUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FC5B5B7510399D74B261C2C /* Pods_GBShopDK_GBShopDKUITests.framework */; };
 		68023FB67F0E4FDE30489BF6 /* Pods_GBShopDKTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA064DF468134A01F77326FA /* Pods_GBShopDKTests.framework */; };
+		CA010BD2276DCFF60030301D /* GBShopCartTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA010BD1276DCFF60030301D /* GBShopCartTests.swift */; };
 		CA0BBE15276B22CE002CA3FC /* ProductReviewsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0BBE14276B22CE002CA3FC /* ProductReviewsList.swift */; };
 		CA0BBE17276B2309002CA3FC /* ProductReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0BBE16276B2309002CA3FC /* ProductReview.swift */; };
 		CA0BBE19276B2C96002CA3FC /* GBShopProductTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0BBE18276B2C96002CA3FC /* GBShopProductTests.swift */; };
@@ -66,6 +67,7 @@
 		7FC5B5B7510399D74B261C2C /* Pods_GBShopDK_GBShopDKUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GBShopDK_GBShopDKUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		956E1E34F69CCAB33DB1D7F7 /* Pods-GBShopDK-GBShopDKUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GBShopDK-GBShopDKUITests.release.xcconfig"; path = "Target Support Files/Pods-GBShopDK-GBShopDKUITests/Pods-GBShopDK-GBShopDKUITests.release.xcconfig"; sourceTree = "<group>"; };
 		A8D4A4BE4DCD43FA19A9FC78 /* Pods-GBShopDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GBShopDK.debug.xcconfig"; path = "Target Support Files/Pods-GBShopDK/Pods-GBShopDK.debug.xcconfig"; sourceTree = "<group>"; };
+		CA010BD1276DCFF60030301D /* GBShopCartTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GBShopCartTests.swift; sourceTree = "<group>"; };
 		CA0BBE14276B22CE002CA3FC /* ProductReviewsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductReviewsList.swift; sourceTree = "<group>"; };
 		CA0BBE16276B2309002CA3FC /* ProductReview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductReview.swift; sourceTree = "<group>"; };
 		CA0BBE18276B2C96002CA3FC /* GBShopProductTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GBShopProductTests.swift; sourceTree = "<group>"; };
@@ -161,6 +163,49 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		CA010BCD276DCF1C0030301D /* RequestsFactoties */ = {
+			isa = PBXGroup;
+			children = (
+				CA4FA061275A3CDF00E8BF6B /* AuthRequestFactory.swift */,
+				CAAFF019275CFD9A00BE30E8 /* RegistrationAndDataChangesFactory.swift */,
+				CABF8613275F9A0D00870B23 /* ProductsRequestFactory.swift */,
+				CA0BBE1A276B33A6002CA3FC /* ProductsReviewsRequestFactory.swift */,
+				CA4FA065275A3CFF00E8BF6B /* RequestFactory.swift */,
+			);
+			path = RequestsFactoties;
+			sourceTree = "<group>";
+		};
+		CA010BCE276DCF640030301D /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				CA4FA063275A3CED00E8BF6B /* Auth.swift */,
+				CAAFF01B275CFF5100BE30E8 /* RegistrationAndChanges.swift */,
+				CABF8615275F9AC000870B23 /* ProductsRequests.swift */,
+				CA0BBE1C276B35ED002CA3FC /* ProductsReviewsRequests.swift */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
+		CA010BCF276DCF850030301D /* ProductModels */ = {
+			isa = PBXGroup;
+			children = (
+				CABF860F275F97DC00870B23 /* ProductList.swift */,
+				CABF8611275F989A00870B23 /* Product.swift */,
+				CA0BBE14276B22CE002CA3FC /* ProductReviewsList.swift */,
+				CA0BBE16276B2309002CA3FC /* ProductReview.swift */,
+			);
+			path = ProductModels;
+			sourceTree = "<group>";
+		};
+		CA010BD0276DCFB10030301D /* UserModels */ = {
+			isa = PBXGroup;
+			children = (
+				CA4FA05C275A3CB300E8BF6B /* LoginResult.swift */,
+				CA4FA05E275A3CBB00E8BF6B /* User.swift */,
+			);
+			path = UserModels;
+			sourceTree = "<group>";
+		};
 		CA4FA051275A3A6B00E8BF6B /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -176,15 +221,8 @@
 		CA4FA060275A3CC300E8BF6B /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				CA4FA061275A3CDF00E8BF6B /* AuthRequestFactory.swift */,
-				CAAFF019275CFD9A00BE30E8 /* RegistrationAndDataChangesFactory.swift */,
-				CABF8613275F9A0D00870B23 /* ProductsRequestFactory.swift */,
-				CA0BBE1A276B33A6002CA3FC /* ProductsReviewsRequestFactory.swift */,
-				CA4FA065275A3CFF00E8BF6B /* RequestFactory.swift */,
-				CA4FA063275A3CED00E8BF6B /* Auth.swift */,
-				CAAFF01B275CFF5100BE30E8 /* RegistrationAndChanges.swift */,
-				CABF8615275F9AC000870B23 /* ProductsRequests.swift */,
-				CA0BBE1C276B35ED002CA3FC /* ProductsReviewsRequests.swift */,
+				CA010BCE276DCF640030301D /* Requests */,
+				CA010BCD276DCF1C0030301D /* RequestsFactoties */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -228,6 +266,7 @@
 			children = (
 				CA61D94827564A4900B777A2 /* GBShopUserTests.swift */,
 				CA0BBE18276B2C96002CA3FC /* GBShopProductTests.swift */,
+				CA010BD1276DCFF60030301D /* GBShopCartTests.swift */,
 			);
 			path = GBShopDKTests;
 			sourceTree = "<group>";
@@ -265,13 +304,9 @@
 		CA61D963275665F900B777A2 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
-				CA4FA05C275A3CB300E8BF6B /* LoginResult.swift */,
+				CA010BD0276DCFB10030301D /* UserModels */,
+				CA010BCF276DCF850030301D /* ProductModels */,
 				CAAFF013275CF8C200BE30E8 /* DefaultResult.swift */,
-				CA4FA05E275A3CBB00E8BF6B /* User.swift */,
-				CABF860F275F97DC00870B23 /* ProductList.swift */,
-				CABF8611275F989A00870B23 /* Product.swift */,
-				CA0BBE14276B22CE002CA3FC /* ProductReviewsList.swift */,
-				CA0BBE16276B2309002CA3FC /* ProductReview.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -597,6 +632,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA010BD2276DCFF60030301D /* GBShopCartTests.swift in Sources */,
 				CA0BBE19276B2C96002CA3FC /* GBShopProductTests.swift in Sources */,
 				CA61D94927564A4900B777A2 /* GBShopUserTests.swift in Sources */,
 			);
