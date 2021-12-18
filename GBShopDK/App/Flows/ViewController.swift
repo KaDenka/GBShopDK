@@ -16,13 +16,13 @@ class ViewController: UIViewController {
         
         //  authLogin(login: "Dumba", password: "1234")
         //  authLogout(login: "Dumba", password: "1234")
-        //  getProductList(pageNumber: 1, categoryId: 1)
-        //  getProduct(productId: 123)
+//          getProductList(pageNumber: 1, categoryId: 1)
+//          getProduct(productId: 123)
         //  userRegistration(userId: 123, userLogin: "Dumba", userPassword: "1234", userName: "Donald", userLastname: "Trump", userEmail: "some@some.ru", userCreditCard: "4276380000000000", userBio: "The president of the USA")
         //        userDataChanges(userId: 123, userLogin: "Dumba", userPassword: "1234", userName: "Donald", userLastname: "Trump", userEmail: "some@some.ru", userCreditCard: "4276380000000000", userBio: "The president of the USA")
-        //        getProductReviewsList(productId: 123)
+                getProductReviewsList(productId: 123)
         //        addProductReview(productId: 123, userName: "Kevin", productRating: 5, userReview: "Very good")
-        cancelProductReview(productId: 123, userName: "Kevin", reviewId: 76857)
+        //cancelProductReview(productId: 123, userName: "Kevin", reviewId: 76857)
     }
     
     

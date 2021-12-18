@@ -12,11 +12,4 @@ struct ProductReview: Codable {
     let userName: String
     let productRating: Int
     let userReview: String
-    
-    enum CodingKeys: String, CodingKey {
-        case reviewId
-        case userName
-        case productRating
-        case userReview
-    }
 }
