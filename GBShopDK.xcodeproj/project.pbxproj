@@ -74,6 +74,9 @@
 		CA0BBE18276B2C96002CA3FC /* GBShopProductTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GBShopProductTests.swift; sourceTree = "<group>"; };
 		CA0BBE1A276B33A6002CA3FC /* ProductsReviewsRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsReviewsRequestFactory.swift; sourceTree = "<group>"; };
 		CA0BBE1C276B35ED002CA3FC /* ProductsReviewsRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsReviewsRequests.swift; sourceTree = "<group>"; };
+		CA3FC72427734D3A0014A6C9 /* GBShopDK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = GBShopDK.app; path = "/Users/deniskazarin/Documents/GitKraken/GBShopDK/build/Debug-iphoneos/GBShopDK.app"; sourceTree = "<absolute>"; };
+		CA3FC72527734D3A0014A6C9 /* GBShopDKTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = GBShopDKTests.xctest; path = "/Users/deniskazarin/Documents/GitKraken/GBShopDK/build/Debug-iphoneos/GBShopDKTests.xctest"; sourceTree = "<absolute>"; };
+		CA3FC72627734D3A0014A6C9 /* GBShopDKUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = GBShopDKUITests.xctest; path = "/Users/deniskazarin/Documents/GitKraken/GBShopDK/build/Debug-iphoneos/GBShopDKUITests.xctest"; sourceTree = "<absolute>"; };
 		CA4FA052275A3ACE00E8BF6B /* AbstractErrorParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractErrorParser.swift; sourceTree = "<group>"; };
 		CA4FA054275A3AF400E8BF6B /* ErrorParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorParser.swift; sourceTree = "<group>"; };
 		CA4FA056275A3C1800E8BF6B /* ResponseCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseCodable.swift; sourceTree = "<group>"; };
@@ -84,7 +87,6 @@
 		CA4FA061275A3CDF00E8BF6B /* AuthRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRequestFactory.swift; sourceTree = "<group>"; };
 		CA4FA063275A3CED00E8BF6B /* Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
 		CA4FA065275A3CFF00E8BF6B /* RequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestFactory.swift; sourceTree = "<group>"; };
-		CA61D92E27564A4700B777A2 /* GBShopDK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = GBShopDK.app; path = "/Users/deniskazarin/Documents/GitKraken/GBShopDK/build/Debug-iphoneos/GBShopDK.app"; sourceTree = "<absolute>"; };
 		CA61D93127564A4700B777A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CA61D93327564A4700B777A2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		CA61D93527564A4700B777A2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -92,9 +94,7 @@
 		CA61D93A27564A4900B777A2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CA61D93D27564A4900B777A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CA61D93F27564A4900B777A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CA61D94427564A4900B777A2 /* GBShopDKTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = GBShopDKTests.xctest; path = "/Users/deniskazarin/Documents/GitKraken/GBShopDK/build/Debug-iphoneos/GBShopDKTests.xctest"; sourceTree = "<absolute>"; };
 		CA61D94827564A4900B777A2 /* GBShopUserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GBShopUserTests.swift; sourceTree = "<group>"; };
-		CA61D94E27564A4900B777A2 /* GBShopDKUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = GBShopDKUITests.xctest; path = "/Users/deniskazarin/Documents/GitKraken/GBShopDK/build/Debug-iphoneos/GBShopDKUITests.xctest"; sourceTree = "<absolute>"; };
 		CA61D95227564A4900B777A2 /* GBShopDKUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GBShopDKUITests.swift; sourceTree = "<group>"; };
 		CA61D95427564A4900B777A2 /* GBShopDKUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GBShopDKUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		CAAFF013275CF8C200BE30E8 /* DefaultResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultResult.swift; sourceTree = "<group>"; };
@@ -339,7 +339,7 @@
 				CA6A32EC2773439D00107C2F /* Alamofire */,
 			);
 			productName = GBShopDK;
-			productReference = CA61D92E27564A4700B777A2 /* GBShopDK.app */;
+			productReference = CA3FC72427734D3A0014A6C9 /* GBShopDK.app */;
 			productType = "com.apple.product-type.application";
 		};
 		CA61D94327564A4900B777A2 /* GBShopDKTests */ = {
@@ -357,7 +357,7 @@
 			);
 			name = GBShopDKTests;
 			productName = GBShopDKTests;
-			productReference = CA61D94427564A4900B777A2 /* GBShopDKTests.xctest */;
+			productReference = CA3FC72527734D3A0014A6C9 /* GBShopDKTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		CA61D94D27564A4900B777A2 /* GBShopDKUITests */ = {
@@ -375,7 +375,7 @@
 			);
 			name = GBShopDKUITests;
 			productName = GBShopDKUITests;
-			productReference = CA61D94E27564A4900B777A2 /* GBShopDKUITests.xctest */;
+			productReference = CA3FC72627734D3A0014A6C9 /* GBShopDKUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
