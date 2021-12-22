@@ -26,7 +26,7 @@ class ViewController: UIViewController {
         //  addProductToCart(productId: 234, productQuantity: 12)
         //  deleteProductFromCart(productId: 564, productQuantity: 3)
         //  getCartProductsList(userId: 234)
-        //  payCartProducts(userId: 453, userCreditCard: 4276380000000000)
+          payCartProducts(userId: 453, userCreditCard: 4276380000000000)
         
     }
     

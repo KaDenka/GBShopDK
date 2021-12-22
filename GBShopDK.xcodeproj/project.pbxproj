@@ -77,6 +77,9 @@
 		CA3FC72427734D3A0014A6C9 /* GBShopDK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = GBShopDK.app; path = "/Users/deniskazarin/Documents/GitKraken/GBShopDK/build/Debug-iphoneos/GBShopDK.app"; sourceTree = "<absolute>"; };
 		CA3FC72527734D3A0014A6C9 /* GBShopDKTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = GBShopDKTests.xctest; path = "/Users/deniskazarin/Documents/GitKraken/GBShopDK/build/Debug-iphoneos/GBShopDKTests.xctest"; sourceTree = "<absolute>"; };
 		CA3FC72627734D3A0014A6C9 /* GBShopDKUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = GBShopDKUITests.xctest; path = "/Users/deniskazarin/Documents/GitKraken/GBShopDK/build/Debug-iphoneos/GBShopDKUITests.xctest"; sourceTree = "<absolute>"; };
+		CA3FC72D277350970014A6C9 /* Unit.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Unit.xctestplan; sourceTree = "<group>"; };
+		CA3FC72E277350CB0014A6C9 /* UI.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = UI.xctestplan; sourceTree = "<group>"; };
+		CA3FC72F277351030014A6C9 /* Full.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Full.xctestplan; sourceTree = "<group>"; };
 		CA4FA052275A3ACE00E8BF6B /* AbstractErrorParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractErrorParser.swift; sourceTree = "<group>"; };
 		CA4FA054275A3AF400E8BF6B /* ErrorParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorParser.swift; sourceTree = "<group>"; };
 		CA4FA056275A3C1800E8BF6B /* ResponseCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseCodable.swift; sourceTree = "<group>"; };
@@ -186,6 +189,16 @@
 			path = CartModels;
 			sourceTree = "<group>";
 		};
+		CA3FC72727734E340014A6C9 /* TestPlans */ = {
+			isa = PBXGroup;
+			children = (
+				CA3FC72D277350970014A6C9 /* Unit.xctestplan */,
+				CA3FC72E277350CB0014A6C9 /* UI.xctestplan */,
+				CA3FC72F277351030014A6C9 /* Full.xctestplan */,
+			);
+			path = TestPlans;
+			sourceTree = "<group>";
+		};
 		CA4FA051275A3A6B00E8BF6B /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -213,6 +226,7 @@
 				CA61D93027564A4700B777A2 /* GBShopDK */,
 				CA61D94727564A4900B777A2 /* GBShopDKTests */,
 				CA61D95127564A4900B777A2 /* GBShopDKUITests */,
+				CA3FC72727734E340014A6C9 /* TestPlans */,
 			);
 			sourceTree = "<group>";
 		};
