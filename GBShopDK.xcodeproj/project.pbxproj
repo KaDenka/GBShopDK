@@ -51,6 +51,7 @@
 		CAD820CF277458920023DF0E /* MainScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD820CE277458920023DF0E /* MainScreenViewController.swift */; };
 		CAD820D127745A150023DF0E /* AuthUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD820D027745A150023DF0E /* AuthUser.swift */; };
 		CAD820D327745FB70023DF0E /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD820D227745FB70023DF0E /* RegistrationViewController.swift */; };
+		CAF575E82774A1D100A7AC14 /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF575E72774A1D100A7AC14 /* RegistrationViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,6 +122,7 @@
 		CAD820CE277458920023DF0E /* MainScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewController.swift; sourceTree = "<group>"; };
 		CAD820D027745A150023DF0E /* AuthUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthUser.swift; sourceTree = "<group>"; };
 		CAD820D227745FB70023DF0E /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		CAF575E72774A1D100A7AC14 /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -366,6 +368,7 @@
 			isa = PBXGroup;
 			children = (
 				CAD820C127744D6C0023DF0E /* LoginViewModel.swift */,
+				CAF575E72774A1D100A7AC14 /* RegistrationViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -527,6 +530,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CAD820CB2774519F0023DF0E /* Logger.swift in Sources */,
+				CAF575E82774A1D100A7AC14 /* RegistrationViewModel.swift in Sources */,
 				CA4FA062275A3CDF00E8BF6B /* AuthRequestFactory.swift in Sources */,
 				CA4FA05B275A3C4B00E8BF6B /* RequestRouter.swift in Sources */,
 				CAAFF014275CF8C200BE30E8 /* DefaultResult.swift in Sources */,
