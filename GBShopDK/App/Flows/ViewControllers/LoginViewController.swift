@@ -9,7 +9,6 @@ import UIKit
 
 class LoginViewController: UIViewController {
     
-    
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var loginStackView: LoginStackView!
    
@@ -38,6 +37,7 @@ class LoginViewController: UIViewController {
         }
     }
     
+    //MARK: -- Notifications settings
     private func registerNotifications() {
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(keyboardWillShow),
@@ -50,7 +50,7 @@ class LoginViewController: UIViewController {
                                                object: nil)
     }
     
-    // MARK: -- Selectors.
+    // MARK: -- Selectors
     @objc func keyboardWillShow(notification: NSNotification) {
         guard let userInfo = notification.userInfo else { return }
         
@@ -88,8 +88,6 @@ class LoginViewController: UIViewController {
        return true
    }
    
-   
-   
    // MARK: -- Transfer functions and Error Alerts
    private func transferToMainScreen() {
        let mainScreenViewController = self.storyboard?.instantiateViewController(withIdentifier: "MainScreenViewController") as! MainScreenViewController
@@ -102,9 +100,7 @@ class LoginViewController: UIViewController {
        self.present(alert, animated: true, completion: nil)
    }
     
-    
-    
-    // MARK: -- Actions.
+    // MARK: -- Buttons actions
     @IBAction func loginButtonTapped(_ sender: Any) {
         if textInputed() {
         let factory = requestFactory.makeAuthRequestFactory()
@@ -134,9 +130,7 @@ class LoginViewController: UIViewController {
         self.present(registrationViewController, animated: true, completion: nil)
     }
     
-    
-    // MARK: -- LoginViewController functions.
-    
+    // MARK: -- LoginViewController functions
     override func viewWillAppear(_ animated: Bool) {
         loginStackView.configureView()
         setupConstraints()
