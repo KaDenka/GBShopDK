@@ -8,32 +8,34 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
+        <!--App Navigation View Controller-->
         <scene sceneID="9kJ-gB-uso">
             <objects>
-                <navigationController id="o6S-fC-oUf" sceneMemberID="viewController">
+                <navigationController restorationIdentifier="AppNavigationViewController" storyboardIdentifier="AppNavigationViewController" navigationBarHidden="YES" id="o6S-fC-oUf" customClass="AppNavigationViewController" customModule="GBShopDK" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="8Qa-lg-qHH">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Ym1-yz-Qso"/>
+                        <segue destination="mnL-2h-XLb" kind="show" identifier="toRegistrationViewController" id="zeD-Pw-h8S"/>
+                        <segue destination="u80-oj-LO0" kind="show" identifier="toMainScreenViewController" id="Kbq-WA-iSa"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lhs-nI-1Cb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1908" y="-128"/>
+            <point key="canvasLocation" x="-1916" y="-129"/>
         </scene>
         <!--Main Screen View Controller-->
         <scene sceneID="4Wy-WW-sgP">
             <objects>
                 <viewController restorationIdentifier="MainScreenViewController" storyboardIdentifier="MainScreenViewController" id="u80-oj-LO0" customClass="MainScreenViewController" customModule="GBShopDK" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5r2-3r-BoR">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="KCw-D8-7w8"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="HPU-3s-9oW"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1e2-pe-e8l" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -161,7 +163,7 @@
             <objects>
                 <viewController restorationIdentifier="RegistrationViewController" storyboardIdentifier="RegistrationViewController" id="mnL-2h-XLb" customClass="RegistrationViewController" customModule="GBShopDK" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AzB-XB-FhS">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bT9-6E-ZcQ">
@@ -174,6 +176,7 @@
                         <viewLayoutGuide key="safeArea" id="kyh-de-63g"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="MyG-34-un4"/>
                     <connections>
                         <outlet property="registrationStackView" destination="LkA-qz-JsN" id="D74-6J-rvc"/>
                         <outlet property="scrollView" destination="bT9-6E-ZcQ" id="bIK-bX-OVa"/>
@@ -309,6 +312,9 @@
                             <rect key="frame" x="0.0" y="714" width="375" height="288"/>
                             <state key="normal" title="Button"/>
                             <buttonConfiguration key="configuration" style="plain" title="Registration"/>
+                            <connections>
+                                <action selector="registrationButtonTapped:" destination="mnL-2h-XLb" eventType="touchUpInside" id="kSV-bD-qH6"/>
+                            </connections>
                         </button>
                     </subviews>
                     <viewLayoutGuide key="safeArea" id="nOC-Bw-BDV"/>

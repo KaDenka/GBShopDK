@@ -92,29 +92,86 @@ class RegistrationViewController: UIViewController {
     func textInputed() -> Bool {
         guard
             self.registrationStackView.userIdTextField.text != "",
-             self.registrationStackView.userLoginTextField.text != "",
-             self.registrationStackView.userPasswordTextField.text != "",
-             self.registrationStackView.userFirstNameTextField.text != "",
-             self.registrationStackView.userLastNameTextField.text != "",
-             self.registrationStackView.userEmailTextField.text != "",
-             self.registrationStackView.userCreditCardTextField.text != "",
-             self.registrationStackView.userBioTextField.text != ""
+            self.registrationStackView.userLoginTextField.text != "",
+            self.registrationStackView.userPasswordTextField.text != "",
+            self.registrationStackView.userFirstNameTextField.text != "",
+            self.registrationStackView.userLastNameTextField.text != "",
+            self.registrationStackView.userEmailTextField.text != "",
+            self.registrationStackView.userCreditCardTextField.text != "",
+            self.registrationStackView.userBioTextField.text != ""
         else {
-                  return false
-              }
+            return false
+        }
         return true
     }
     
+    //MARK: -- Transfer functions
+    private func transferToMainScreen() {
+        
+        let mainViewController = self.storyboard?.instantiateViewController(withIdentifier: "MainScreenViewController") as! MainScreenViewController
+        navigationController?.pushViewController(mainViewController, animated: true)
+        
+        clearScreen()
+    }
     
+    private func showError(_ errorMessage: String) {
+        let alert = UIAlertController(title: "Registration error", message: errorMessage, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
     
+    //MARK: -- Clear screen
     
+    private func clearScreen() {
+        self.registrationStackView.userIdTextField.text = ""
+        self.registrationStackView.userLoginTextField.text = ""
+        self.registrationStackView.userPasswordTextField.text = ""
+        self.registrationStackView.userFirstNameTextField.text = ""
+        self.registrationStackView.userLastNameTextField.text = ""
+        self.registrationStackView.userEmailTextField.text = ""
+        self.registrationStackView.userCreditCardTextField.text = ""
+        self.registrationStackView.userBioTextField.text = ""
+        
+        self.registrationStackView.registrationButton.backgroundColor = UIColor.opaqueSeparator
+        self.registrationStackView.registrationButton.isEnabled = false
+    }
     
-    
+    //MARK: -- Buttons Actions
+    @IBAction func registrationButtonTapped(_ sender: Any) {
+        if textInputed() {
+            let factory = requestFactory.makeRegistrationAndDataChangesFactory()
+            let registrationUser = RegistrationAndChangesUser(
+                userId: Int(self.registrationStackView.userIdTextField.text!)!,
+                userLogin: self.registrationStackView.userLoginTextField.text!,
+                userPassword: self.registrationStackView.userPasswordTextField.text!,
+                userName: self.registrationStackView.userFirstNameTextField.text!,
+                userLastname: self.registrationStackView.userLastNameTextField.text!,
+                userEmail: self.registrationStackView.userEmailTextField.text!,
+                userCreditCard: self.registrationStackView.userCreditCardTextField.text!,
+                userBio: self.registrationStackView.userBioTextField.text!)
+            
+            factory.registration(userId: registrationUser.userId, userLogin: registrationUser.userLogin, userPassword: registrationUser.userPassword, userName: registrationUser.userName, userLastname: registrationUser.userLastname, userEmail: registrationUser.userEmail, userCreditCard: registrationUser.userCreditCard, userBio: registrationUser.userBio) { response in
+                DispatchQueue.main.async {
+                    logging(Logger.funcStart)
+                    logging(response)
+                    
+                    switch response.result {
+                    case .success(let success): success.result == 1 ? self.transferToMainScreen() : self.showError("Authorisation error")
+                    case .failure(let error): self.showError(error.localizedDescription)
+                    }
+                    
+                    logging(Logger.funcEnd)
+                }
+            }
+        } else {
+            self.showError("Please fill all form")
+        }
+    }
     
     //MARK: -- ViewController functions
     override func viewWillAppear(_ animated: Bool) {
         setupConstraints()
-        registrationStackView.configView()
+        registrationStackView.configRegistrationView()
         setupControls()
         registerNotifications()
     }

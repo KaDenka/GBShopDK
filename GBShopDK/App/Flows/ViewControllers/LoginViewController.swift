@@ -11,9 +11,9 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var loginStackView: LoginStackView!
-   
+    
     let requestFactory = RequestFactory()
-  
+    
     //MARK: -- Constraints settings
     private func setupConstraints() {
         self.scrollView.addSubview(loginStackView)
@@ -62,7 +62,7 @@ class LoginViewController: UIViewController {
         contentInset.bottom = keyboardFrame.size.height + 200
         self.scrollView.contentInset = contentInset
     }
-
+    
     @objc func keyboardWillHide(notification:NSNotification) {
         let contentInset: UIEdgeInsets = UIEdgeInsets.zero
         self.scrollView.contentInset = contentInset
@@ -83,51 +83,62 @@ class LoginViewController: UIViewController {
     func textInputed() -> Bool {
         guard self.loginStackView.loginTextField.text != "",
               self.loginStackView.passwordTextField.text != "" else {
-                 return false
-             }
-       return true
-   }
-   
-   // MARK: -- Transfer functions and Error Alerts
-   private func transferToMainScreen() {
-       let mainScreenViewController = self.storyboard?.instantiateViewController(withIdentifier: "MainScreenViewController") as! MainScreenViewController
-       self.navigationController?.pushViewController(mainScreenViewController, animated: true)
-   }
-   
-   private func showError(_ errorMessage: String) {
-       let alert = UIAlertController(title: "Authorisation error", message: errorMessage, preferredStyle: .alert)
-       alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-       self.present(alert, animated: true, completion: nil)
-   }
+                  return false
+              }
+        return true
+    }
+    
+    //MARK: -- Clear screen
+    private func clearScreen() {
+        self.loginStackView.loginButton.backgroundColor = UIColor.opaqueSeparator
+        self.loginStackView.loginButton.isEnabled = false
+        self.loginStackView.loginTextField.text = ""
+        self.loginStackView.passwordTextField.text = ""
+    }
+    
+    // MARK: -- Transfer functions and Error Alerts
+    private func transferToMainScreen() {
+        
+        clearScreen()
+        
+        let mainScreenViewController = self.storyboard?.instantiateViewController(withIdentifier: "MainScreenViewController") as! MainScreenViewController
+        navigationController?.pushViewController(mainScreenViewController, animated: true)
+    }
+    
+    private func showError(_ errorMessage: String) {
+        let alert = UIAlertController(title: "Authorisation error", message: errorMessage, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
     
     // MARK: -- Buttons actions
     @IBAction func loginButtonTapped(_ sender: Any) {
         if textInputed() {
-        let factory = requestFactory.makeAuthRequestFactory()
+            let factory = requestFactory.makeAuthRequestFactory()
             let authUser = AuthUser(userLogin: self.loginStackView.loginTextField.text!, userPassword: self.loginStackView.passwordTextField.text!)
-        
-        factory.login(userLogin: authUser.userLogin, userPassword: authUser.userPassword) { response in
-            DispatchQueue.main.async {
-                logging(Logger.funcStart)
-                logging(response)
-                
-                switch response.result {
-                case .success(let success): success.result == 1 ? self.transferToMainScreen() : self.showError("Authorisation error")
-                case .failure(let error): self.showError(error.localizedDescription)
+            
+            factory.login(userLogin: authUser.userLogin, userPassword: authUser.userPassword) { response in
+                DispatchQueue.main.async {
+                    logging(Logger.funcStart)
+                    logging(response)
+                    
+                    switch response.result {
+                    case .success(let success): success.result == 1 ? self.transferToMainScreen() : self.showError("Authorisation error")
+                    case .failure(let error): self.showError(error.localizedDescription)
+                    }
+                    
+                    logging(Logger.funcEnd)
                 }
-                
-                logging(Logger.funcEnd)
             }
-        }
         } else {
             self.showError("Login or password not filled")
         }
-            
+        
     }
     
     @IBAction func registrationButtonTapped(_ sender: Any) {
         let registrationViewController = self.storyboard?.instantiateViewController(withIdentifier: "RegistrationViewController") as! RegistrationViewController
-        self.present(registrationViewController, animated: true, completion: nil)
+        navigationController?.pushViewController(registrationViewController, animated: true)
     }
     
     // MARK: -- LoginViewController functions

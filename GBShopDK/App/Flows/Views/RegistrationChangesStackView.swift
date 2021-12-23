@@ -32,7 +32,7 @@ class RegistrationChangesStackView: UIStackView {
     let model = RegistrationAndChangesViewModel()
     
     
-    func configView() {
+    func configRegistrationView() {
         registrationFormLabel.text = model.registrationFormLabel
         userIdLabel.text = model.userIdLabel
         userLoginLabel.text = model.userLoginLabel
@@ -53,5 +53,11 @@ class RegistrationChangesStackView: UIStackView {
         userEmailTextField.placeholder = model.userEmailTextPlaceholder
         userCreditCardTextField.placeholder = model.userCreditCardTextPlaceholder
         userBioTextField.placeholder = model.userBioTextPlaceholder
+    }
+    
+    func configChangesView() {
+        configRegistrationView()
+        registrationFormLabel.text = "Update the User Data"
+        registrationButton.titleLabel?.text = "Update User Data"
     }
 }

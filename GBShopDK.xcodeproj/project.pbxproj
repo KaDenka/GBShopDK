@@ -53,6 +53,8 @@
 		CAD820D327745FB70023DF0E /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD820D227745FB70023DF0E /* RegistrationViewController.swift */; };
 		CAF575E82774A1D100A7AC14 /* RegistrationAndChangesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF575E72774A1D100A7AC14 /* RegistrationAndChangesViewModel.swift */; };
 		CAF575EA2774A5D300A7AC14 /* RegistrationChangesStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF575E92774A5D300A7AC14 /* RegistrationChangesStackView.swift */; };
+		CAF575EC2774B98000A7AC14 /* AppNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF575EB2774B98000A7AC14 /* AppNavigationViewController.swift */; };
+		CAF575EE2774C23C00A7AC14 /* RegistrationAndChangesUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF575ED2774C23C00A7AC14 /* RegistrationAndChangesUser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -125,6 +127,8 @@
 		CAD820D227745FB70023DF0E /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		CAF575E72774A1D100A7AC14 /* RegistrationAndChangesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationAndChangesViewModel.swift; sourceTree = "<group>"; };
 		CAF575E92774A5D300A7AC14 /* RegistrationChangesStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationChangesStackView.swift; sourceTree = "<group>"; };
+		CAF575EB2774B98000A7AC14 /* AppNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNavigationViewController.swift; sourceTree = "<group>"; };
+		CAF575ED2774C23C00A7AC14 /* RegistrationAndChangesUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationAndChangesUser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,6 +199,7 @@
 				CA4FA05C275A3CB300E8BF6B /* LoginResult.swift */,
 				CA4FA05E275A3CBB00E8BF6B /* User.swift */,
 				CAD820D027745A150023DF0E /* AuthUser.swift */,
+				CAF575ED2774C23C00A7AC14 /* RegistrationAndChangesUser.swift */,
 			);
 			path = UserModels;
 			sourceTree = "<group>";
@@ -383,6 +388,7 @@
 				CAD820C627744FAB0023DF0E /* LoginViewController.swift */,
 				CAD820CE277458920023DF0E /* MainScreenViewController.swift */,
 				CAD820D227745FB70023DF0E /* RegistrationViewController.swift */,
+				CAF575EB2774B98000A7AC14 /* AppNavigationViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -562,8 +568,10 @@
 				CA4FA053275A3ACE00E8BF6B /* AbstractErrorParser.swift in Sources */,
 				CAD820C227744D6C0023DF0E /* LoginViewModel.swift in Sources */,
 				CABF8612275F989A00870B23 /* Product.swift in Sources */,
+				CAF575EC2774B98000A7AC14 /* AppNavigationViewController.swift in Sources */,
 				CABF8610275F97DC00870B23 /* ProductList.swift in Sources */,
 				CA010BDB276DD6B90030301D /* CartRequests.swift in Sources */,
+				CAF575EE2774C23C00A7AC14 /* RegistrationAndChangesUser.swift in Sources */,
 				CA0BBE1D276B35ED002CA3FC /* ProductsReviewsRequests.swift in Sources */,
 				CA0BBE17276B2309002CA3FC /* ProductReview.swift in Sources */,
 				CAD820CF277458920023DF0E /* MainScreenViewController.swift in Sources */,
