@@ -11,7 +11,7 @@ struct RegistrationAndChangesViewModel {
     let registrationFormLabel: String = "Fill the registration form:"
     let userIdLabel: String = "User ID:"
     let userLoginLabel: String = "User Login:"
-    let userPasswordLabel: String = "User Password"
+    let userPasswordLabel: String = "User Password:"
     let userFirstNameLabel: String = "First Name:"
     let userLastnameLabel: String = "Last Name:"
     let userEmailLabel: String = "Email Address:"
@@ -19,7 +19,7 @@ struct RegistrationAndChangesViewModel {
     let userBioLabel: String = "User Bio:"
     let registrationButtonLabel: String = "Registration"
     
-    let userIdTextPlaceholder: String = "Input User ID"
+    let userIdTextPlaceholder: String = "Input User ID (numbers only)"
     let userLoginTextPlaceholder: String = "Input User Login"
     let userPasswordTextPlaceholder: String = "Input User Password"
     let userFirstNameTextPlaceholder: String = "Input First Name"

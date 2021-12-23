@@ -125,7 +125,7 @@ class LoginViewController: UIViewController {
             
     }
     
-    @IBAction func signupButtonTapped(_ sender: Any) {
+    @IBAction func registrationButtonTapped(_ sender: Any) {
         let registrationViewController = self.storyboard?.instantiateViewController(withIdentifier: "RegistrationViewController") as! RegistrationViewController
         self.present(registrationViewController, animated: true, completion: nil)
     }
