@@ -44,6 +44,7 @@
 		CABF8612275F989A00870B23 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABF8611275F989A00870B23 /* Product.swift */; };
 		CABF8614275F9A0D00870B23 /* ProductsRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABF8613275F9A0D00870B23 /* ProductsRequestFactory.swift */; };
 		CABF8616275F9AC000870B23 /* ProductsRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABF8615275F9AC000870B23 /* ProductsRequests.swift */; };
+		CAD820C227744D6C0023DF0E /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD820C127744D6C0023DF0E /* LoginViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,9 +75,6 @@
 		CA0BBE18276B2C96002CA3FC /* GBShopProductTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GBShopProductTests.swift; sourceTree = "<group>"; };
 		CA0BBE1A276B33A6002CA3FC /* ProductsReviewsRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsReviewsRequestFactory.swift; sourceTree = "<group>"; };
 		CA0BBE1C276B35ED002CA3FC /* ProductsReviewsRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsReviewsRequests.swift; sourceTree = "<group>"; };
-		CA3FC72427734D3A0014A6C9 /* GBShopDK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = GBShopDK.app; path = "/Users/deniskazarin/Documents/GitKraken/GBShopDK/build/Debug-iphoneos/GBShopDK.app"; sourceTree = "<absolute>"; };
-		CA3FC72527734D3A0014A6C9 /* GBShopDKTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = GBShopDKTests.xctest; path = "/Users/deniskazarin/Documents/GitKraken/GBShopDK/build/Debug-iphoneos/GBShopDKTests.xctest"; sourceTree = "<absolute>"; };
-		CA3FC72627734D3A0014A6C9 /* GBShopDKUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = GBShopDKUITests.xctest; path = "/Users/deniskazarin/Documents/GitKraken/GBShopDK/build/Debug-iphoneos/GBShopDKUITests.xctest"; sourceTree = "<absolute>"; };
 		CA3FC72D277350970014A6C9 /* Unit.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Unit.xctestplan; sourceTree = "<group>"; };
 		CA3FC72E277350CB0014A6C9 /* UI.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = UI.xctestplan; sourceTree = "<group>"; };
 		CA3FC72F277351030014A6C9 /* Full.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Full.xctestplan; sourceTree = "<group>"; };
@@ -107,6 +105,10 @@
 		CABF8611275F989A00870B23 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		CABF8613275F9A0D00870B23 /* ProductsRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsRequestFactory.swift; sourceTree = "<group>"; };
 		CABF8615275F9AC000870B23 /* ProductsRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsRequests.swift; sourceTree = "<group>"; };
+		CAD820BD27744D3C0023DF0E /* GBShopDK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GBShopDK.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CAD820BE27744D3C0023DF0E /* GBShopDKTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GBShopDKTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CAD820BF27744D3C0023DF0E /* GBShopDKUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GBShopDKUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CAD820C127744D6C0023DF0E /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -227,6 +229,9 @@
 				CA61D94727564A4900B777A2 /* GBShopDKTests */,
 				CA61D95127564A4900B777A2 /* GBShopDKUITests */,
 				CA3FC72727734E340014A6C9 /* TestPlans */,
+				CAD820BD27744D3C0023DF0E /* GBShopDK.app */,
+				CAD820BE27744D3C0023DF0E /* GBShopDKTests.xctest */,
+				CAD820BF27744D3C0023DF0E /* GBShopDKUITests.xctest */,
 			);
 			sourceTree = "<group>";
 		};
@@ -284,6 +289,7 @@
 		CA61D963275665F900B777A2 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
+				CAD820C027744D520023DF0E /* ViewModels */,
 				CA010BD5276DD4330030301D /* CartModels */,
 				CA010BD0276DCFB10030301D /* UserModels */,
 				CA010BCF276DCF850030301D /* ProductModels */,
@@ -333,6 +339,14 @@
 			path = Environments;
 			sourceTree = "<group>";
 		};
+		CAD820C027744D520023DF0E /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				CAD820C127744D6C0023DF0E /* LoginViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -353,7 +367,7 @@
 				CA6A32EC2773439D00107C2F /* Alamofire */,
 			);
 			productName = GBShopDK;
-			productReference = CA3FC72427734D3A0014A6C9 /* GBShopDK.app */;
+			productReference = CAD820BD27744D3C0023DF0E /* GBShopDK.app */;
 			productType = "com.apple.product-type.application";
 		};
 		CA61D94327564A4900B777A2 /* GBShopDKTests */ = {
@@ -371,7 +385,7 @@
 			);
 			name = GBShopDKTests;
 			productName = GBShopDKTests;
-			productReference = CA3FC72527734D3A0014A6C9 /* GBShopDKTests.xctest */;
+			productReference = CAD820BE27744D3C0023DF0E /* GBShopDKTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		CA61D94D27564A4900B777A2 /* GBShopDKUITests */ = {
@@ -389,7 +403,7 @@
 			);
 			name = GBShopDKUITests;
 			productName = GBShopDKUITests;
-			productReference = CA3FC72627734D3A0014A6C9 /* GBShopDKUITests.xctest */;
+			productReference = CAD820BF27744D3C0023DF0E /* GBShopDKUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -491,6 +505,7 @@
 				CA61D93427564A4700B777A2 /* SceneDelegate.swift in Sources */,
 				CA4FA05F275A3CBB00E8BF6B /* User.swift in Sources */,
 				CA4FA053275A3ACE00E8BF6B /* AbstractErrorParser.swift in Sources */,
+				CAD820C227744D6C0023DF0E /* LoginViewModel.swift in Sources */,
 				CABF8612275F989A00870B23 /* Product.swift in Sources */,
 				CABF8610275F97DC00870B23 /* ProductList.swift in Sources */,
 				CA010BDB276DD6B90030301D /* CartRequests.swift in Sources */,
