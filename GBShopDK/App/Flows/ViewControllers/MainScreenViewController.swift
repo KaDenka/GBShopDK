@@ -1,5 +1,5 @@
 //
-//  LoginViewController.swift
+//  MainScreenViewController.swift
 //  GBShopDK
 //
 //  Created by Denis Kazarin on 23.12.2021.
@@ -7,13 +7,10 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
-    
-    let model = LoginViewModel()
+class MainScreenViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
 
         // Do any additional setup after loading the view.
     }
