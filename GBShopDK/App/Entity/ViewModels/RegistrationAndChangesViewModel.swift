@@ -1,5 +1,5 @@
 //
-//  RegistrationViewModel.swift
+//  RegistrationAndChangesViewModel.swift
 //  GBShopDK
 //
 //  Created by Denis Kazarin on 23.12.2021.

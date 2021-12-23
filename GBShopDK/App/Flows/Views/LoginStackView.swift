@@ -22,7 +22,7 @@ class LoginStackView: UIStackView {
     
     var model = LoginViewModel()
    
-    
+    //MARK: -- View Configuration function
     func configureView() {
         shopLogo.image = model.shopLogo
         loginLabel.text = model.loginLabel
@@ -35,9 +35,4 @@ class LoginStackView: UIStackView {
         loginTextField.placeholder = model.loginTextFieldPlaceholder
         passwordTextField.placeholder = model.passwordTextFieldPlaceholder
     }
-    
-    
-    
-     
-    
 }
