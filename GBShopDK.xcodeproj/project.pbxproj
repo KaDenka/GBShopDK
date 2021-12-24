@@ -28,9 +28,7 @@
 		CA61D94927564A4900B777A2 /* GBShopDKTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA61D94827564A4900B777A2 /* GBShopDKTests.swift */; };
 		CA61D95327564A4900B777A2 /* GBShopDKUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA61D95227564A4900B777A2 /* GBShopDKUITests.swift */; };
 		CA61D95527564A4900B777A2 /* GBShopDKUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA61D95427564A4900B777A2 /* GBShopDKUITestsLaunchTests.swift */; };
-		CAAFF014275CF8C200BE30E8 /* LogoutResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAAFF013275CF8C200BE30E8 /* LogoutResult.swift */; };
-		CAAFF016275CFC0200BE30E8 /* RegistrationUserResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAAFF015275CFC0200BE30E8 /* RegistrationUserResult.swift */; };
-		CAAFF018275CFC1300BE30E8 /* ChangeUserDataResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAAFF017275CFC1300BE30E8 /* ChangeUserDataResult.swift */; };
+		CAAFF014275CF8C200BE30E8 /* DefaultResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAAFF013275CF8C200BE30E8 /* DefaultResult.swift */; };
 		CAAFF01A275CFD9A00BE30E8 /* RegistrationAndDataChangesFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAAFF019275CFD9A00BE30E8 /* RegistrationAndDataChangesFactory.swift */; };
 		CAAFF01C275CFF5100BE30E8 /* RegistrationAndChanges.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAAFF01B275CFF5100BE30E8 /* RegistrationAndChanges.swift */; };
 		CABF8610275F97DC00870B23 /* ProductList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABF860F275F97DC00870B23 /* ProductList.swift */; };
@@ -87,9 +85,7 @@
 		CA61D95227564A4900B777A2 /* GBShopDKUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GBShopDKUITests.swift; sourceTree = "<group>"; };
 		CA61D95427564A4900B777A2 /* GBShopDKUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GBShopDKUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		CA8C27AAD8C0295CEEE3D457 /* Pods-GBShopDKTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GBShopDKTests.release.xcconfig"; path = "Target Support Files/Pods-GBShopDKTests/Pods-GBShopDKTests.release.xcconfig"; sourceTree = "<group>"; };
-		CAAFF013275CF8C200BE30E8 /* LogoutResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutResult.swift; sourceTree = "<group>"; };
-		CAAFF015275CFC0200BE30E8 /* RegistrationUserResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationUserResult.swift; sourceTree = "<group>"; };
-		CAAFF017275CFC1300BE30E8 /* ChangeUserDataResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeUserDataResult.swift; sourceTree = "<group>"; };
+		CAAFF013275CF8C200BE30E8 /* DefaultResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultResult.swift; sourceTree = "<group>"; };
 		CAAFF019275CFD9A00BE30E8 /* RegistrationAndDataChangesFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationAndDataChangesFactory.swift; sourceTree = "<group>"; };
 		CAAFF01B275CFF5100BE30E8 /* RegistrationAndChanges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationAndChanges.swift; sourceTree = "<group>"; };
 		CABF860F275F97DC00870B23 /* ProductList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductList.swift; sourceTree = "<group>"; };
@@ -257,10 +253,8 @@
 			isa = PBXGroup;
 			children = (
 				CA4FA05C275A3CB300E8BF6B /* LoginResult.swift */,
-				CAAFF013275CF8C200BE30E8 /* LogoutResult.swift */,
+				CAAFF013275CF8C200BE30E8 /* DefaultResult.swift */,
 				CA4FA05E275A3CBB00E8BF6B /* User.swift */,
-				CAAFF015275CFC0200BE30E8 /* RegistrationUserResult.swift */,
-				CAAFF017275CFC1300BE30E8 /* ChangeUserDataResult.swift */,
 				CABF860F275F97DC00870B23 /* ProductList.swift */,
 				CABF8611275F989A00870B23 /* Product.swift */,
 			);
@@ -559,9 +553,8 @@
 			files = (
 				CA4FA062275A3CDF00E8BF6B /* AuthRequestFactory.swift in Sources */,
 				CA4FA05B275A3C4B00E8BF6B /* RequestRouter.swift in Sources */,
-				CAAFF014275CF8C200BE30E8 /* LogoutResult.swift in Sources */,
+				CAAFF014275CF8C200BE30E8 /* DefaultResult.swift in Sources */,
 				CABF8614275F9A0D00870B23 /* ProductsRequestFactory.swift in Sources */,
-				CAAFF018275CFC1300BE30E8 /* ChangeUserDataResult.swift in Sources */,
 				CA4FA059275A3C2E00E8BF6B /* AbstractRequestFactory.swift in Sources */,
 				CA4FA066275A3CFF00E8BF6B /* RequestFactory.swift in Sources */,
 				CA4FA055275A3AF400E8BF6B /* ErrorParser.swift in Sources */,
@@ -569,7 +562,6 @@
 				CABF8616275F9AC000870B23 /* ProductsRequests.swift in Sources */,
 				CAAFF01C275CFF5100BE30E8 /* RegistrationAndChanges.swift in Sources */,
 				CA61D93627564A4700B777A2 /* ViewController.swift in Sources */,
-				CAAFF016275CFC0200BE30E8 /* RegistrationUserResult.swift in Sources */,
 				CA61D93227564A4700B777A2 /* AppDelegate.swift in Sources */,
 				CA4FA05D275A3CB300E8BF6B /* LoginResult.swift in Sources */,
 				CAAFF01A275CFD9A00BE30E8 /* RegistrationAndDataChangesFactory.swift in Sources */,

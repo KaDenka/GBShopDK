@@ -7,6 +7,8 @@
 
 import Foundation
 
-struct LogoutResult: Codable {
+struct DefaultResult: Codable {
     let result: Int
+    let userMessage: String?
+    let errorMessage: String?
 }
