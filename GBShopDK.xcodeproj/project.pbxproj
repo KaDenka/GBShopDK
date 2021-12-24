@@ -41,6 +41,8 @@
 		CAAFF014275CF8C200BE30E8 /* DefaultResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAAFF013275CF8C200BE30E8 /* DefaultResult.swift */; };
 		CAAFF01A275CFD9A00BE30E8 /* RegistrationAndDataChangesFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAAFF019275CFD9A00BE30E8 /* RegistrationAndDataChangesFactory.swift */; };
 		CAAFF01C275CFF5100BE30E8 /* RegistrationAndChanges.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAAFF01B275CFF5100BE30E8 /* RegistrationAndChanges.swift */; };
+		CAB2E8592775B2D000027EC7 /* MainScreenStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB2E8582775B2D000027EC7 /* MainScreenStackView.swift */; };
+		CAB2E85B2775B2F000027EC7 /* MainScreenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB2E85A2775B2F000027EC7 /* MainScreenModel.swift */; };
 		CABF8610275F97DC00870B23 /* ProductList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABF860F275F97DC00870B23 /* ProductList.swift */; };
 		CABF8612275F989A00870B23 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABF8611275F989A00870B23 /* Product.swift */; };
 		CABF8614275F9A0D00870B23 /* ProductsRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABF8613275F9A0D00870B23 /* ProductsRequestFactory.swift */; };
@@ -112,6 +114,8 @@
 		CAAFF013275CF8C200BE30E8 /* DefaultResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultResult.swift; sourceTree = "<group>"; };
 		CAAFF019275CFD9A00BE30E8 /* RegistrationAndDataChangesFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationAndDataChangesFactory.swift; sourceTree = "<group>"; };
 		CAAFF01B275CFF5100BE30E8 /* RegistrationAndChanges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationAndChanges.swift; sourceTree = "<group>"; };
+		CAB2E8582775B2D000027EC7 /* MainScreenStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenStackView.swift; sourceTree = "<group>"; };
+		CAB2E85A2775B2F000027EC7 /* MainScreenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenModel.swift; sourceTree = "<group>"; };
 		CABF860F275F97DC00870B23 /* ProductList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductList.swift; sourceTree = "<group>"; };
 		CABF8611275F989A00870B23 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		CABF8613275F9A0D00870B23 /* ProductsRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsRequestFactory.swift; sourceTree = "<group>"; };
@@ -368,6 +372,7 @@
 			children = (
 				CAA80A5727746B9F00E8D01D /* LoginStackView.swift */,
 				CAF575E92774A5D300A7AC14 /* RegistrationChangesStackView.swift */,
+				CAB2E8582775B2D000027EC7 /* MainScreenStackView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -377,6 +382,7 @@
 			children = (
 				CAD820C127744D6C0023DF0E /* LoginViewModel.swift */,
 				CAF575E72774A1D100A7AC14 /* RegistrationAndChangesViewModel.swift */,
+				CAB2E85A2775B2F000027EC7 /* MainScreenModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -545,6 +551,7 @@
 				CAAFF014275CF8C200BE30E8 /* DefaultResult.swift in Sources */,
 				CA010BD9276DD5750030301D /* CartRequestsFactory.swift in Sources */,
 				CABF8614275F9A0D00870B23 /* ProductsRequestFactory.swift in Sources */,
+				CAB2E85B2775B2F000027EC7 /* MainScreenModel.swift in Sources */,
 				CA0BBE15276B22CE002CA3FC /* ProductReviewsList.swift in Sources */,
 				CA4FA059275A3C2E00E8BF6B /* AbstractRequestFactory.swift in Sources */,
 				CAD820D327745FB70023DF0E /* RegistrationViewController.swift in Sources */,
@@ -572,6 +579,7 @@
 				CABF8610275F97DC00870B23 /* ProductList.swift in Sources */,
 				CA010BDB276DD6B90030301D /* CartRequests.swift in Sources */,
 				CAF575EE2774C23C00A7AC14 /* RegistrationAndChangesUser.swift in Sources */,
+				CAB2E8592775B2D000027EC7 /* MainScreenStackView.swift in Sources */,
 				CA0BBE1D276B35ED002CA3FC /* ProductsReviewsRequests.swift in Sources */,
 				CA0BBE17276B2309002CA3FC /* ProductReview.swift in Sources */,
 				CAD820CF277458920023DF0E /* MainScreenViewController.swift in Sources */,

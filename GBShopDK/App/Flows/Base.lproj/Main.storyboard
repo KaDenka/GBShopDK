@@ -32,14 +32,75 @@
                     <view key="view" contentMode="scaleToFill" id="5r2-3r-BoR">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mKn-I4-7N8">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <viewLayoutGuide key="contentLayoutGuide" id="dpA-zo-QeT"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="ByW-Pn-P98"/>
+                            </scrollView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="KCw-D8-7w8"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="HPU-3s-9oW"/>
+                    <connections>
+                        <outlet property="mainScreenStackView" destination="Y9i-9I-dIx" id="mu8-qh-OhV"/>
+                        <outlet property="scrollView" destination="mKn-I4-7N8" id="SFv-Yb-N2g"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1e2-pe-e8l" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <stackView opaque="NO" contentMode="scaleToFill" restorationIdentifier="MainScreenStackView" axis="vertical" spacing="20" id="Y9i-9I-dIx" customClass="MainScreenStackView" customModule="GBShopDK" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="326" height="677"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wR3-lc-ljm">
+                            <rect key="frame" x="0.0" y="0.0" width="326" height="45.5"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="500" id="JSb-Qq-RCN"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="38"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e4p-4T-5IX">
+                            <rect key="frame" x="0.0" y="65.5" width="326" height="80"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="80" id="e4f-5c-8wg"/>
+                            </constraints>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="Change User Data">
+                                <backgroundConfiguration key="background" cornerRadius="17">
+                                    <color key="backgroundColor" red="0.1829081021" green="0.45236653910000002" blue="0.66277426480000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="strokeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </backgroundConfiguration>
+                                <color key="baseForegroundColor" red="0.39283311370000001" green="0.99984401460000005" blue="0.99608570340000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </buttonConfiguration>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="loL-Yp-cWv">
+                            <rect key="frame" x="0.0" y="165.5" width="326" height="80"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="80" id="0PZ-k1-ZcT"/>
+                            </constraints>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="Logout">
+                                <backgroundConfiguration key="background" cornerRadius="17">
+                                    <color key="backgroundColor" red="0.1829081021" green="0.45236653910000002" blue="0.66277426480000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="strokeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </backgroundConfiguration>
+                                <color key="baseForegroundColor" red="0.39283311370000001" green="0.99984401460000005" blue="0.99608570340000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </buttonConfiguration>
+                        </button>
+                    </subviews>
+                    <viewLayoutGuide key="safeArea" id="7E4-CH-6X8"/>
+                    <connections>
+                        <outlet property="changeDataButton" destination="e4p-4T-5IX" id="Nbi-qr-vJN"/>
+                        <outlet property="logoutButton" destination="loL-Yp-cWv" id="1v9-PD-eyN"/>
+                        <outlet property="wellcomeLabel" destination="wR3-lc-ljm" id="pUw-PQ-aWP"/>
+                    </connections>
+                </stackView>
             </objects>
-            <point key="canvasLocation" x="-1987" y="-873"/>
+            <point key="canvasLocation" x="-1988.4057971014495" y="-873.21428571428567"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
