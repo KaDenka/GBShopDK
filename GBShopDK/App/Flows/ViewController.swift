@@ -16,10 +16,13 @@ class ViewController: UIViewController {
         
         //  authLogin(login: "Dumba", password: "1234")
         //  authLogout(login: "Dumba", password: "1234")
-        //  getProductList(pageNumber: 1, categoryId: 1)
-        //  getProduct(productId: 123)
+//          getProductList(pageNumber: 1, categoryId: 1)
+//          getProduct(productId: 123)
         //  userRegistration(userId: 123, userLogin: "Dumba", userPassword: "1234", userName: "Donald", userLastname: "Trump", userEmail: "some@some.ru", userCreditCard: "4276380000000000", userBio: "The president of the USA")
-        userDataChanges(userId: 123, userLogin: "Dumba", userPassword: "1234", userName: "Donald", userLastname: "Trump", userEmail: "some@some.ru", userCreditCard: "4276380000000000", userBio: "The president of the USA")
+        //        userDataChanges(userId: 123, userLogin: "Dumba", userPassword: "1234", userName: "Donald", userLastname: "Trump", userEmail: "some@some.ru", userCreditCard: "4276380000000000", userBio: "The president of the USA")
+                getProductReviewsList(productId: 123)
+        //        addProductReview(productId: 123, userName: "Kevin", productRating: 5, userReview: "Very good")
+        //cancelProductReview(productId: 123, userName: "Kevin", reviewId: 76857)
     }
     
     
@@ -87,6 +90,42 @@ class ViewController: UIViewController {
     func getProduct(productId: Int) {
         let getProducts = requestFactory.makeProductsFactory()
         getProducts.product(productId: productId) { response in
+            switch response.result {
+            case .success(let result):
+                print(result)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
+    func getProductReviewsList(productId: Int) {
+        let getReviewsList = requestFactory.makeProductsReviewsFactory()
+        getReviewsList.productReviewsList(productId: productId) { response in
+            switch response.result {
+            case .success(let result):
+                print(result)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
+    func addProductReview(productId: Int, userName: String, productRating: Int, userReview: String) {
+        let addReview = requestFactory.makeProductsReviewsFactory()
+        addReview.productReviewAdd(productId: productId, userName: userName, productRating: productRating, userReview: userReview) { response in
+            switch response.result {
+            case .success(let result):
+                print(result)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
+    func cancelProductReview(productId: Int, userName: String, reviewId: Int) {
+        let cancelReview = requestFactory.makeProductsReviewsFactory()
+        cancelReview.productReviewCancel(productId: productId, userName: userName, reviewId: reviewId) { response in
             switch response.result {
             case .success(let result):
                 print(result)
