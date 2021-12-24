@@ -136,22 +136,76 @@ class ChangeUserDataViewController: UIViewController {
     }
     
     //MARK: -- Fill the form after loading
-    
     private func firstFillForm() {
+        let factory = requestFactory.makeGetRequestsFactory()
+        let getUserData = GetUserData(request: "get")
         
+        factory.getUserData(request: getUserData.request) { response in
+            DispatchQueue.main.async {
+                logging(Logger.funcStart)
+                logging(response)
+                
+                switch response.result {
+                case .success(let success):
+                    self.changeDataStackView.userIdTextField.text = String(success.userId)
+                    self.changeDataStackView.userLoginTextField.text = success.userLogin
+                    self.changeDataStackView.userPasswordTextField.text = success.userPassword
+                    self.changeDataStackView.userFirstNameTextField.text = success.userName
+                    self.changeDataStackView.userLastNameTextField.text = success.userLastname
+                    self.changeDataStackView.userEmailTextField.text = success.userEmail
+                    self.changeDataStackView.userCreditCardTextField.text = success.userCreditCard
+                    self.changeDataStackView.userBioTextField.text = success.userBio
+                case .failure(let error):
+                    self.showError(error.localizedDescription)
+                }
+                
+                logging(Logger.funcEnd)
+            }
+        }
     }
     
+    //MARK: -- Transfer
+    @IBAction func changeUserDataButtonTapped() {
+        if textInputed() {
+            let factory = requestFactory.makeRegistrationAndDataChangesFactory()
+            let registrationUser = RegistrationAndChangesUser(
+                userId: Int(self.changeDataStackView.userIdTextField.text!)!,
+                userLogin: self.changeDataStackView.userLoginTextField.text!,
+                userPassword: self.changeDataStackView.userPasswordTextField.text!,
+                userName: self.changeDataStackView.userFirstNameTextField.text!,
+                userLastname: self.changeDataStackView.userLastNameTextField.text!,
+                userEmail: self.changeDataStackView.userEmailTextField.text!,
+                userCreditCard: self.changeDataStackView.userCreditCardTextField.text!,
+                userBio: self.changeDataStackView.userBioTextField.text!)
+            
+            factory.dataChange(userId: registrationUser.userId, userLogin: registrationUser.userLogin, userPassword: registrationUser.userPassword, userName: registrationUser.userName, userLastname: registrationUser.userLastname, userEmail: registrationUser.userEmail, userCreditCard: registrationUser.userCreditCard, userBio: registrationUser.userBio) { response in
+                DispatchQueue.main.async {
+                    logging(Logger.funcStart)
+                    logging(response)
+                    
+                    switch response.result {
+                    case .success(let success): success.result == 1 ? self.transferToMainScreen() : self.showError("Authorisation error")
+                    case .failure(let error): self.showError(error.localizedDescription)
+                    }
+                    
+                    logging(Logger.funcEnd)
+                }
+            }
+        } else {
+            self.showError("Please fill all form")
+        }
+    }
     
-    
-    
+    //MARK: -- ViewController functions
     override func viewWillAppear(_ animated: Bool) {
         changeDataStackView.configChangesView()
         setupConstraints()
         setupControls()
         registerNotifications()
+        firstFillForm()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-}
+    }
 }

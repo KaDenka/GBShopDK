@@ -14,6 +14,9 @@ class MainScreenViewController: UIViewController {
     
     let requestFactory = RequestFactory()
     
+    var authUser = AuthUser(userLogin: "", userPassword: "")
+    
+    
     //MARK: -- Constraints settings
     private func setupConstraints() {
         self.scrollView.addSubview(mainScreenStackView)
@@ -25,6 +28,29 @@ class MainScreenViewController: UIViewController {
         self.mainScreenStackView.bottomAnchor.constraint(equalTo: self.scrollView.bottomAnchor).isActive = true
         
         self.mainScreenStackView.widthAnchor.constraint(equalTo: self.view.widthAnchor).isActive = true
+    }
+    
+    //MARK: -- Prepare UserData functions
+    private func loadingUserData() {
+        let factory = requestFactory.makeGetRequestsFactory()
+        let getUserData = GetUserData(request: "get")
+        
+        factory.getUserData(request: getUserData.request) { response in
+            DispatchQueue.main.async {
+                logging(Logger.funcStart)
+                logging(response)
+                
+                switch response.result {
+                case .success(let success):
+                    self.authUser.userLogin = success.userLogin
+                    self.authUser.userPassword = success.userPassword
+                case .failure(let error):
+                    self.showError(error.localizedDescription)
+                }
+                
+                logging(Logger.funcEnd)
+            }
+        }
     }
     
     //MARK: -- Transfers
@@ -47,13 +73,9 @@ class MainScreenViewController: UIViewController {
     
     @IBAction func logoutButtonTapped(_ sender: Any) {
         
-        let userLogin = "123"
-        let userPassword = "password"
-        
         let factory = requestFactory.makeAuthRequestFactory()
-        let authUser = AuthUser(userLogin: userLogin, userPassword: userPassword)
         
-        factory.logout(userLogin: authUser.userLogin, userPassword: authUser.userPassword) { response in
+        factory.logout(userLogin: self.authUser.userLogin, userPassword: self.authUser.userPassword) { response in
             DispatchQueue.main.async {
                 logging(Logger.funcStart)
                 logging(response)
@@ -72,6 +94,7 @@ class MainScreenViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         mainScreenStackView.configureView()
         setupConstraints()
+        loadingUserData()
     }
     
     override func viewDidLoad() {

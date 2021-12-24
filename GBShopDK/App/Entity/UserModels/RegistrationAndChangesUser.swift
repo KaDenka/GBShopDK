@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct RegistrationAndChangesUser {
+struct RegistrationAndChangesUser: Codable {
 let userId: Int
 let userLogin: String
 let userPassword: String
