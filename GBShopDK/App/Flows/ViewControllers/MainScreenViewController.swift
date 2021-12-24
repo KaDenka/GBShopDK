@@ -26,6 +26,47 @@ class MainScreenViewController: UIViewController {
         
         self.mainScreenStackView.widthAnchor.constraint(equalTo: self.view.widthAnchor).isActive = true
     }
+    
+    //MARK: -- Transfers
+    private func logoutTransfer() {
+        let loginViewController = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+        navigationController?.pushViewController(loginViewController, animated: true)
+    }
+    
+    private func showError(_ errorMessage: String) {
+        let alert = UIAlertController(title: "Error", message: errorMessage, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    //MARK: -- Buttons Actions
+    @IBAction func changeUserDataButtonTapped(_ sender: Any) {
+        let changeUserDataViewController = self.storyboard?.instantiateViewController(withIdentifier: "ChangeUserDataViewController") as! ChangeUserDataViewController
+        navigationController?.pushViewController(changeUserDataViewController, animated: true)
+    }
+    
+    @IBAction func logoutButtonTapped(_ sender: Any) {
+        
+        let userLogin = "123"
+        let userPassword = "password"
+        
+        let factory = requestFactory.makeAuthRequestFactory()
+        let authUser = AuthUser(userLogin: userLogin, userPassword: userPassword)
+        
+        factory.logout(userLogin: authUser.userLogin, userPassword: authUser.userPassword) { response in
+            DispatchQueue.main.async {
+                logging(Logger.funcStart)
+                logging(response)
+                
+                switch response.result {
+                case .success(let success): success.result == 1 ? self.logoutTransfer() : self.showError("Logout error")
+                case .failure(let error): self.showError(error.localizedDescription)
+                }
+                
+                logging(Logger.funcEnd)
+            }
+        }
+    }
 
     
     override func viewWillAppear(_ animated: Bool) {

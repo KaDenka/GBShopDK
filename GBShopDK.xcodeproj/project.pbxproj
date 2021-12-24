@@ -43,6 +43,7 @@
 		CAAFF01C275CFF5100BE30E8 /* RegistrationAndChanges.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAAFF01B275CFF5100BE30E8 /* RegistrationAndChanges.swift */; };
 		CAB2E8592775B2D000027EC7 /* MainScreenStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB2E8582775B2D000027EC7 /* MainScreenStackView.swift */; };
 		CAB2E85B2775B2F000027EC7 /* MainScreenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB2E85A2775B2F000027EC7 /* MainScreenModel.swift */; };
+		CAB2E85D2775C44300027EC7 /* ChangeUserDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB2E85C2775C44300027EC7 /* ChangeUserDataViewController.swift */; };
 		CABF8610275F97DC00870B23 /* ProductList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABF860F275F97DC00870B23 /* ProductList.swift */; };
 		CABF8612275F989A00870B23 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABF8611275F989A00870B23 /* Product.swift */; };
 		CABF8614275F9A0D00870B23 /* ProductsRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABF8613275F9A0D00870B23 /* ProductsRequestFactory.swift */; };
@@ -116,6 +117,7 @@
 		CAAFF01B275CFF5100BE30E8 /* RegistrationAndChanges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationAndChanges.swift; sourceTree = "<group>"; };
 		CAB2E8582775B2D000027EC7 /* MainScreenStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenStackView.swift; sourceTree = "<group>"; };
 		CAB2E85A2775B2F000027EC7 /* MainScreenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenModel.swift; sourceTree = "<group>"; };
+		CAB2E85C2775C44300027EC7 /* ChangeUserDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeUserDataViewController.swift; sourceTree = "<group>"; };
 		CABF860F275F97DC00870B23 /* ProductList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductList.swift; sourceTree = "<group>"; };
 		CABF8611275F989A00870B23 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		CABF8613275F9A0D00870B23 /* ProductsRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsRequestFactory.swift; sourceTree = "<group>"; };
@@ -395,6 +397,7 @@
 				CAD820CE277458920023DF0E /* MainScreenViewController.swift */,
 				CAD820D227745FB70023DF0E /* RegistrationViewController.swift */,
 				CAF575EB2774B98000A7AC14 /* AppNavigationViewController.swift */,
+				CAB2E85C2775C44300027EC7 /* ChangeUserDataViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -549,6 +552,7 @@
 				CA4FA062275A3CDF00E8BF6B /* AuthRequestFactory.swift in Sources */,
 				CA4FA05B275A3C4B00E8BF6B /* RequestRouter.swift in Sources */,
 				CAAFF014275CF8C200BE30E8 /* DefaultResult.swift in Sources */,
+				CAB2E85D2775C44300027EC7 /* ChangeUserDataViewController.swift in Sources */,
 				CA010BD9276DD5750030301D /* CartRequestsFactory.swift in Sources */,
 				CABF8614275F9A0D00870B23 /* ProductsRequestFactory.swift in Sources */,
 				CAB2E85B2775B2F000027EC7 /* MainScreenModel.swift in Sources */,
