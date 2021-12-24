@@ -1,15 +1,15 @@
 //
-//  GBShopProductTests.swift
+//  GBShopCartTests.swift
 //  GBShopDKTests
 //
-//  Created by Denis Kazarin on 16.12.2021.
+//  Created by Denis Kazarin on 18.12.2021.
 //
 
 import XCTest
 @testable import GBShopDK
 import Alamofire
 
-class GBShopProductTests: XCTestCase {
+class GBShopCartTests: XCTestCase {
 
     let expectation = XCTestExpectation(description: "Download API data")
     var errorParser: ErrorParserStub!
@@ -20,27 +20,15 @@ class GBShopProductTests: XCTestCase {
         let errorMessage: String?
     }
     
-    struct ProductListStub: Codable {
+    struct CartOrderedProductsListStub: Codable {
         let count: Int
-        let productList: [Product]
+        let productsInCartList: [ProductInCartStub]
     }
 
-    struct ProductStub: Codable {
-        let productPrice: Int
+    struct ProductInCartStub: Codable {
+        let productQuantity: Int
         let productName: String
-        let productDescription: String
-    }
-    
-    struct ProductReviewsListStub: Codable {
-        let count: Int
-        let productReviews: [ProductReview]
-    }
-    
-    struct ProductReviewStub: Codable {
-        let reviewId: Int
-        let userName: String
-        let productRating: Int
-        let userReview: String
+        let productId: Int
     }
 
     enum ApiErrorStub: Error {
@@ -79,84 +67,18 @@ class GBShopProductTests: XCTestCase {
        // }
     }
     
-    func testProductRequest() {
+    func testAddProductToCartRequest() {
         let errorParser = ErrorParserStub()
         let productId = 1
-        var parameters: Parameters? {
-            return [
-                "productId": productId
-            ]
-        }
-        
-        AF.request("https://intense-retreat-87800.herokuapp.com/product", method: .post, parameters: parameters).responseCodable(errorParser: errorParser) { (response: DataResponse<ProductStub, AFError>) in
-            switch response.result {
-            case .success(_):
-                break
-            case .failure: XCTFail()
-            }
-            self.expectation.fulfill()
-        }
-        wait(for: [expectation], timeout: 5.0)
-    }
-    
-    func testProductListRequest() {
-        let errorParser = ErrorParserStub()
-        let pageNumber = 1
-        let categoryId = 1
-        var parameters: Parameters? {
-            return [
-                "pageNumber": pageNumber,
-                "categoryId": categoryId
-            ]
-        }
-        
-        AF.request("https://intense-retreat-87800.herokuapp.com/productList", method: .post, parameters: parameters).responseCodable(errorParser: errorParser) { (response: DataResponse<ProductListStub, AFError>) in
-            switch response.result {
-            case .success(_):
-                break
-            case .failure: XCTFail()
-            }
-            self.expectation.fulfill()
-        }
-        wait(for: [expectation], timeout: 5.0)
-    }
-    
-    func testProductReviewsListRequest() {
-        let errorParser = ErrorParserStub()
-        let productId = 123
-        var parameters: Parameters? {
-            return [
-                "productId": productId
-            ]
-        }
-        
-        AF.request("https://intense-retreat-87800.herokuapp.com/productReviewsList", method: .post, parameters: parameters).responseCodable(errorParser: errorParser) { (response: DataResponse<ProductReviewsListStub, AFError>) in
-            switch response.result {
-            case .success(_):
-                break
-            case .failure: XCTFail()
-            }
-            self.expectation.fulfill()
-        }
-        wait(for: [expectation], timeout: 5.0)
-    }
-    
-    func testProductReviewAddRequest() {
-        let errorParser = ErrorParserStub()
-        let productId = 1
-        let userName = "Kevin"
-        let productRating = 5
-        let userReview = "Good"
+        let productQuantity = 5
         var parameters: Parameters? {
             return [
                 "productId": productId,
-                "userName": userName,
-                "productRating": productRating,
-                "userReview": userReview
+                "productQuantity": productQuantity
             ]
         }
         
-        AF.request("https://intense-retreat-87800.herokuapp.com/productReviewAdd", method: .post, parameters: parameters).responseCodable(errorParser: errorParser) { (response: DataResponse<DefaultResultStub, AFError>) in
+        AF.request("https://intense-retreat-87800.herokuapp.com/productAddToCart", method: .post, parameters: parameters).responseCodable(errorParser: errorParser) { (response: DataResponse<DefaultResultStub, AFError>) in
             switch response.result {
             case .success(_):
                 break
@@ -167,20 +89,18 @@ class GBShopProductTests: XCTestCase {
         wait(for: [expectation], timeout: 5.0)
     }
     
-    func testProductReviewCancelRequest() {
+    func testDeleteProductFromCartRequest() {
         let errorParser = ErrorParserStub()
         let productId = 1
-        let userName = "Kevin"
-        let reviewId = 5
+        let productQuantity = 1
         var parameters: Parameters? {
             return [
                 "productId": productId,
-                "userName": userName,
-                "reviewId": reviewId
+                "productQuantity": productQuantity
             ]
         }
         
-        AF.request("https://intense-retreat-87800.herokuapp.com/productReviewCancel", method: .post, parameters: parameters).responseCodable(errorParser: errorParser) { (response: DataResponse<DefaultResultStub, AFError>) in
+        AF.request("https://intense-retreat-87800.herokuapp.com/productDeleteFromCart", method: .post, parameters: parameters).responseCodable(errorParser: errorParser) { (response: DataResponse<DefaultResultStub, AFError>) in
             switch response.result {
             case .success(_):
                 break
@@ -190,4 +110,47 @@ class GBShopProductTests: XCTestCase {
         }
         wait(for: [expectation], timeout: 5.0)
     }
+    
+    func testGetOrderedProductsListRequest() {
+        let errorParser = ErrorParserStub()
+        let userId = 123
+        var parameters: Parameters? {
+            return [
+                "userId": userId
+            ]
+        }
+        
+        AF.request("https://intense-retreat-87800.herokuapp.com/getProductsInCartList", method: .post, parameters: parameters).responseCodable(errorParser: errorParser) { (response: DataResponse<CartOrderedProductsListStub, AFError>) in
+            switch response.result {
+            case .success(_):
+                break
+            case .failure: XCTFail()
+            }
+            self.expectation.fulfill()
+        }
+        wait(for: [expectation], timeout: 5.0)
+    }
+    
+    func testPayProductsInCartRequest() {
+        let errorParser = ErrorParserStub()
+        let userId = 1
+        let userCreditCard = 427638000000000000
+        var parameters: Parameters? {
+            return [
+                "userId": userId,
+                "userCreditCard": userCreditCard
+            ]
+        }
+        
+        AF.request("https://intense-retreat-87800.herokuapp.com/payProductsInCart", method: .post, parameters: parameters).responseCodable(errorParser: errorParser) { (response: DataResponse<DefaultResultStub, AFError>) in
+            switch response.result {
+            case .success(_):
+                break
+            case .failure: XCTFail()
+            }
+            self.expectation.fulfill()
+        }
+        wait(for: [expectation], timeout: 5.0)
+    }
+    
 }
