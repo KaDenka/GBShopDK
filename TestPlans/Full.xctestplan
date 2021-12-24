@@ -1,7 +1,7 @@
 {
   "configurations" : [
     {
-      "id" : "14385001-7313-4A5B-B32F-B921D3ECDEDD",
+      "id" : "DE60A0C5-74D0-4E16-A587-B572EA5FBB93",
       "name" : "Configuration 1",
       "options" : {
 
@@ -9,11 +9,7 @@
     }
   ],
   "defaultOptions" : {
-    "targetForVariableExpansion" : {
-      "containerPath" : "container:GBShopDK.xcodeproj",
-      "identifier" : "CA61D92D27564A4700B777A2",
-      "name" : "GBShopDK"
-    }
+    "testTimeoutsEnabled" : true
   },
   "testTargets" : [
     {
