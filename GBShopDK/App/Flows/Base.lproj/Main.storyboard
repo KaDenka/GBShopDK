@@ -56,16 +56,16 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wR3-lc-ljm">
-                            <rect key="frame" x="0.0" y="0.0" width="326" height="500"/>
+                            <rect key="frame" x="0.0" y="0.0" width="326" height="45.5"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="500" id="JSb-Qq-RCN"/>
+                                <constraint firstAttribute="height" constant="400" id="JSb-Qq-RCN"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="38"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e4p-4T-5IX">
-                            <rect key="frame" x="0.0" y="520" width="326" height="80"/>
+                            <rect key="frame" x="0.0" y="65.5" width="326" height="80"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="80" id="e4f-5c-8wg"/>
                             </constraints>
@@ -82,7 +82,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="loL-Yp-cWv">
-                            <rect key="frame" x="0.0" y="620" width="326" height="31"/>
+                            <rect key="frame" x="0.0" y="165.5" width="326" height="80"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="80" id="0PZ-k1-ZcT"/>
                             </constraints>
@@ -98,11 +98,29 @@
                                 <action selector="logoutButtonTapped:" destination="u80-oj-LO0" eventType="touchUpInside" id="6Ak-Ad-iyy"/>
                             </connections>
                         </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XBd-GT-0DT">
+                            <rect key="frame" x="0.0" y="265.5" width="326" height="80"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="80" id="bih-iM-U3C"/>
+                            </constraints>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="Product List">
+                                <backgroundConfiguration key="background" cornerRadius="17">
+                                    <color key="backgroundColor" red="0.1829081021" green="0.45236653910000002" blue="0.66277426480000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="strokeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </backgroundConfiguration>
+                                <color key="baseForegroundColor" red="0.39283311370000001" green="0.99984401460000005" blue="0.99608570340000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </buttonConfiguration>
+                            <connections>
+                                <action selector="productListButtonTapped:" destination="u80-oj-LO0" eventType="touchUpInside" id="IA6-5m-qfO"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <viewLayoutGuide key="safeArea" id="7E4-CH-6X8"/>
                     <connections>
                         <outlet property="changeDataButton" destination="e4p-4T-5IX" id="Nbi-qr-vJN"/>
                         <outlet property="logoutButton" destination="loL-Yp-cWv" id="1v9-PD-eyN"/>
+                        <outlet property="productListButton" destination="XBd-GT-0DT" id="xuh-Jr-qmb"/>
                         <outlet property="wellcomeLabel" destination="wR3-lc-ljm" id="pUw-PQ-aWP"/>
                     </connections>
                 </stackView>
@@ -604,6 +622,21 @@
                 </stackView>
             </objects>
             <point key="canvasLocation" x="385.50724637681162" y="-129.24107142857142"/>
+        </scene>
+        <!--Product List View Controller-->
+        <scene sceneID="Txz-h2-joR">
+            <objects>
+                <viewController restorationIdentifier="ProductListViewController" storyboardIdentifier="ProductListViewController" id="41F-vO-E1J" customClass="ProductListViewController" customModule="GBShopDK" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xil-Sr-yvu">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="P5d-cX-XtV"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SaB-dj-z40" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1187" y="-129"/>
         </scene>
     </scenes>
     <resources>

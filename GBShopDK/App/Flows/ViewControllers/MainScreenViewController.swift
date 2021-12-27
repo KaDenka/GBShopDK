@@ -90,6 +90,10 @@ class MainScreenViewController: UIViewController {
         }
     }
 
+    @IBAction func productListButtonTapped(_ sender: Any) {
+        let productListViewController = self.storyboard?.instantiateViewController(withIdentifier: "ProductListViewController") as! ProductListViewController
+        navigationController?.pushViewController(productListViewController, animated: true)
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         mainScreenStackView.configureView()
