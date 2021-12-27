@@ -9,8 +9,5 @@ import UIKit
 
 class ProductListTableView: UITableView {
 
-    let model = ProductListViewModel()
-    
-    
     
 }

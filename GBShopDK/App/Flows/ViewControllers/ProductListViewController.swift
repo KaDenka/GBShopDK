@@ -33,11 +33,11 @@ class ProductListViewController: UIViewController, UITableViewDelegate, UITableV
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.productListTableView.dequeueReusableCell(withIdentifier: "ProductTableViewCell", for: indexPath) as! ProductTableViewCell
-        cell.configureCell()
-        cell.productName.text = productList[indexPath.row].productName
-        cell.productPrice.text = String(productList[indexPath.row].productPrice)
-        cell.productDescription.text = productList[indexPath.row].productDescription
-        
+//        cell.configureCell()
+//        cell.productName.text = productList[indexPath.row].productName
+//        cell.productPrice.text = String(productList[indexPath.row].productPrice)
+       cell.productDescription.text = productList[indexPath.row].productDescription
+        cell.textLabel?.text = "have cell"
         return cell
     }
     
