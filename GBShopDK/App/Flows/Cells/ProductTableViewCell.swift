@@ -20,9 +20,9 @@ class ProductTableViewCell: UITableViewCell {
     let model = ProductViewModel()
     
     func configureCell() {
-        productNameLabel.text = model.productNameLabel
-        productPriceLabel.text = model.productPriceLabel
-        productDescriptionLabel.text = model.productDescriptionLabel
+      //  productNameLabel.text = "Product Name: "//model.productNameLabel
+      //  productPriceLabel.text = "Product Price: "//model.productPriceLabel
+       // productDescriptionLabel.text = "Product Description: "//model.productDescriptionLabel
     }
 
 }

@@ -9,5 +9,5 @@ import Foundation
 
 struct ProductListViewModel {
     let productListLabel: String = "Products Catalog"
-    let countLabel: String = "Count of Products: "
+    var countLabel: String = "Count of Products: "
 }

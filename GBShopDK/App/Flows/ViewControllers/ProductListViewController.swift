@@ -8,19 +8,41 @@
 import UIKit
 
 class ProductListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-   
+    
     @IBOutlet weak var productListTableView: UITableView!
     
     let requestFactory = RequestFactory()
+    var tableModel = ProductListViewModel()
     var productList: [Product] = []
     
+    private func setupConstraints() {
+        self.view.addSubview(productListTableView)
+        self.productListTableView.translatesAutoresizingMaskIntoConstraints = false
+        
+        self.productListTableView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
+        self.productListTableView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
+        self.productListTableView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
+        self.productListTableView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
+        
+        self.productListTableView.widthAnchor.constraint(equalTo: self.view.widthAnchor).isActive = true
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        productList.count
+        return self.productList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-   //     let cell =
-        return UITableViewCell()
+        let cell = self.productListTableView.dequeueReusableCell(withIdentifier: "ProductTableViewCell", for: indexPath) as! ProductTableViewCell
+        cell.configureCell()
+        cell.productName.text = productList[indexPath.row].productName
+        cell.productPrice.text = String(productList[indexPath.row].productPrice)
+        cell.productDescription.text = productList[indexPath.row].productDescription
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "\(self.tableModel.productListLabel) \(self.tableModel.countLabel)"
     }
     
     private func showError(_ errorMessage: String) {
@@ -40,6 +62,8 @@ class ProductListViewController: UIViewController, UITableViewDelegate, UITableV
                 switch response.result {
                 case .success(let success):
                     self.productList = success.productList
+                    self.tableModel.countLabel = self.tableModel.countLabel + String(success.count)
+                    self.productListTableView.reloadData()
                 case .failure(let error):
                     self.showError(error.localizedDescription)
                 }
@@ -52,6 +76,7 @@ class ProductListViewController: UIViewController, UITableViewDelegate, UITableV
     override func viewWillAppear(_ animated: Bool) {
         productListTableView.delegate = self
         productListTableView.dataSource = self
+        setupConstraints()
         productListTableView.register(ProductTableViewCell.self, forCellReuseIdentifier: "ProductTableViewCell")
         self.fillTable()
     }
@@ -60,8 +85,7 @@ class ProductListViewController: UIViewController, UITableViewDelegate, UITableV
     override func viewDidLoad() {
         super.viewDidLoad()
         print("Hello catalog")
-        productListTableView.reloadData()
     }
-   
+    
     
 }
