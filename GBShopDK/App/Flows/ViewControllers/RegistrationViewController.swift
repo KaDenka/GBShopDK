@@ -19,12 +19,10 @@ class RegistrationViewController: UIViewController {
     private func setupConstraints() {
         self.scrollView.addSubview(registrationStackView)
         self.registrationStackView.translatesAutoresizingMaskIntoConstraints = false
-        
         self.registrationStackView.leadingAnchor.constraint(equalTo: self.scrollView.leadingAnchor).isActive = true
         self.registrationStackView.trailingAnchor.constraint(equalTo: self.scrollView.trailingAnchor).isActive = true
         self.registrationStackView.topAnchor.constraint(equalTo: self.scrollView.topAnchor).isActive = true
         self.registrationStackView.bottomAnchor.constraint(equalTo: self.scrollView.bottomAnchor).isActive = true
-        
         self.registrationStackView.widthAnchor.constraint(equalTo: self.view.widthAnchor).isActive = true
     }
     
