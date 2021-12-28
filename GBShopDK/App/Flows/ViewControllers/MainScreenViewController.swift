@@ -91,8 +91,8 @@ class MainScreenViewController: UIViewController {
     }
 
     @IBAction func productListButtonTapped(_ sender: Any) {
-        let productListViewController = self.storyboard?.instantiateViewController(withIdentifier: "ProductListViewController") as! ProductListViewController
-        navigationController?.pushViewController(productListViewController, animated: true)
+        let productListTableViewController = self.storyboard?.instantiateViewController(withIdentifier: "ProductListTableViewController") as! ProductListTableViewController
+        navigationController?.pushViewController(productListTableViewController, animated: true)
     }
     
     override func viewWillAppear(_ animated: Bool) {
