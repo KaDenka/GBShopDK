@@ -25,6 +25,7 @@
                         <segue destination="u80-oj-LO0" kind="show" identifier="toMainScreenViewController" id="Kbq-WA-iSa"/>
                         <segue destination="yd3-aW-yBg" kind="show" identifier="toChangeUserDataController" id="gWl-um-9ni"/>
                         <segue destination="xLI-OR-fXz" kind="show" identifier="toProductListTableViewController" id="jsp-fB-qXM"/>
+                        <segue destination="Gwp-rC-ClT" kind="show" identifier="toProductAndReviewsController" id="Aza-Cn-jvn"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lhs-nI-1Cb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -643,23 +644,7 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Mtj-lN-c07" id="lU8-aB-vwY">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="183"/>
                                     <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="productName" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pda-J5-60S">
-                                            <rect key="frame" x="186" y="81" width="42" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="pda-J5-60S" firstAttribute="centerY" secondItem="lU8-aB-vwY" secondAttribute="centerY" id="NTv-AF-Pyw"/>
-                                        <constraint firstItem="pda-J5-60S" firstAttribute="centerX" secondItem="lU8-aB-vwY" secondAttribute="centerX" id="pxK-rK-6cq"/>
-                                    </constraints>
                                 </tableViewCellContentView>
-                                <constraints>
-                                    <constraint firstItem="pda-J5-60S" firstAttribute="centerY" secondItem="Mtj-lN-c07" secondAttribute="centerY" id="Gh2-Sf-OpU"/>
-                                    <constraint firstItem="pda-J5-60S" firstAttribute="centerX" secondItem="Mtj-lN-c07" secondAttribute="centerX" id="nX9-RL-I4d"/>
-                                </constraints>
                             </tableViewCell>
                         </prototypes>
                         <sections/>
@@ -673,6 +658,35 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="79I-7U-Iww" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1253.6231884057972" y="-129.24107142857142"/>
+        </scene>
+        <!--Product And Reviews Table View Controller-->
+        <scene sceneID="2Pk-bp-8Vp">
+            <objects>
+                <tableViewController restorationIdentifier="ProductAndReviewsTableViewController" storyboardIdentifier="ProductAndReviewsTableViewController" id="Gwp-rC-ClT" customClass="ProductAndReviewsTableViewController" customModule="GBShopDK" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="LNJ-e0-U5a">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProductReviewCell" id="9Nt-vs-Rd5">
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9Nt-vs-Rd5" id="hUh-0e-Btx">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Gwp-rC-ClT" id="Nap-2U-I7S"/>
+                            <outlet property="delegate" destination="Gwp-rC-ClT" id="dft-tM-rbT"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="kZz-tQ-0Qu"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="w6i-hu-O3a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2088" y="-129"/>
         </scene>
     </scenes>
     <resources>

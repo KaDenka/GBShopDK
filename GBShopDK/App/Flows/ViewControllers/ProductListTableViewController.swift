@@ -14,6 +14,7 @@ class ProductListTableViewController: UITableViewController {
     let factory = RequestFactory()
     var productList: [Product] = []
     
+    //MARK: -- Private functions
     private func showError(_ errorMessage: String) {
         let alert = UIAlertController(title: "Request error", message: errorMessage, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
@@ -23,7 +24,7 @@ class ProductListTableViewController: UITableViewController {
     private func tableTitleConfiguration() {
         self.navigationItem.title = "Product List"
     }
-    
+
     private func fillTheForm() {
         let request = factory.makeProductsFactory()
         let getList = GetProductList(pageNumber: 1, categoryId: 1)
@@ -40,6 +41,11 @@ class ProductListTableViewController: UITableViewController {
                 logging(Logger.funcEnd)
             }
         }
+    }
+    
+    private func transferToProductReview() {
+        let productReviewTableViewController = self.storyboard?.instantiateViewController(withIdentifier: "ProductAndReviewsTableViewController") as! ProductAndReviewsTableViewController
+        navigationController?.pushViewController(productReviewTableViewController, animated: true)
     }
     
     // MARK: - Table view data source
@@ -66,6 +72,7 @@ class ProductListTableViewController: UITableViewController {
         switch indexPath.row {
         case 0:
             cell.textLabel?.text = "Product Name: \(self.productList[indexPath.section].productName)"
+            cell.textLabel?.font = .systemFont(ofSize: 25, weight: .bold)
             return cell
         case 1:
             cell.textLabel?.text = "Product Price: \(self.productList[indexPath.section].productPrice)"
@@ -75,6 +82,12 @@ class ProductListTableViewController: UITableViewController {
             return cell
         default:
             return UITableViewCell()
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row == 0 {
+            self.transferToProductReview()
         }
     }
     
