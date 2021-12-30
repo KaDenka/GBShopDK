@@ -25,7 +25,7 @@ class ProductListTableViewController: UITableViewController {
         self.navigationItem.title = "Product List"
         self.navigationItem.backButtonTitle = "Back"
     }
-
+    
     private func fillTheForm() {
         let request = factory.makeProductsFactory()
         let getList = GetProductList(pageNumber: 1, categoryId: 1)
