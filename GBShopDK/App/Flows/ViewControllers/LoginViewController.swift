@@ -146,6 +146,7 @@ class LoginViewController: UIViewController {
         setupConstraints()
         setupControls()
         registerNotifications()
+        self.navigationItem.hidesBackButton = true
     }
     
     override func viewDidLoad() {

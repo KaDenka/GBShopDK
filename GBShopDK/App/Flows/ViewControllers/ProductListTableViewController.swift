@@ -23,6 +23,7 @@ class ProductListTableViewController: UITableViewController {
     
     private func tableTitleConfiguration() {
         self.navigationItem.title = "Product List"
+        self.navigationItem.backButtonTitle = "Back"
     }
 
     private func fillTheForm() {
@@ -69,10 +70,11 @@ class ProductListTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseId, for: indexPath)
+        cell.textLabel?.font = .systemFont(ofSize: 15, weight: .regular)
         switch indexPath.row {
         case 0:
             cell.textLabel?.text = "Product Name: \(self.productList[indexPath.section].productName)"
-            cell.textLabel?.font = .systemFont(ofSize: 25, weight: .bold)
+            cell.textLabel?.font = .systemFont(ofSize: 18, weight: .bold)
             return cell
         case 1:
             cell.textLabel?.text = "Product Price: \(self.productList[indexPath.section].productPrice)"

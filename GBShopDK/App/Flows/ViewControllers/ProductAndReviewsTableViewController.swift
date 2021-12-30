@@ -79,14 +79,16 @@ class ProductAndReviewsTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.reviewsList.count
+        return 4
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
+        cell.textLabel?.font = .systemFont(ofSize: 15, weight: .regular)
         switch indexPath.row {
         case 0:
             cell.textLabel?.text = "Review ID: \(self.reviewsList[indexPath.section].reviewId)"
+            cell.textLabel?.font = .systemFont(ofSize: 17, weight: .bold)
             return cell
         case 1:
             cell.textLabel?.text = "From: \(self.reviewsList[indexPath.section].userName)"
