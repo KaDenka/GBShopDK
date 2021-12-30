@@ -43,7 +43,6 @@ class ProductListTableViewController: UITableViewController {
     }
     
     // MARK: - Table view data source
-    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return productList.count
     }
@@ -79,12 +78,11 @@ class ProductListTableViewController: UITableViewController {
         }
     }
     
-    //MARK: -- Controller functions 
+    //MARK: -- Controller functions
     override func viewWillAppear(_ animated: Bool) {
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellReuseId)
         self.tableTitleConfiguration()
         self.fillTheForm()
-        
     }
     
     override func viewDidLoad() {

@@ -8,7 +8,6 @@
 import Foundation
 import Alamofire
 
-
 class ProductsReviewsRequests: AbstractRequestFactory {
     let errorParser: AbstractErrorParser
     let sessionManager: Session

@@ -13,9 +13,7 @@ class MainScreenViewController: UIViewController {
     @IBOutlet weak var mainScreenStackView: MainScreenStackView!
     
     let requestFactory = RequestFactory()
-    
     var authUser = AuthUser(userLogin: "", userPassword: "")
-    
     
     //MARK: -- Constraints settings
     private func setupConstraints() {
@@ -80,12 +78,13 @@ class MainScreenViewController: UIViewController {
             }
         }
     }
-
+    
     @IBAction func productListButtonTapped(_ sender: Any) {
         let productListTableViewController = self.storyboard?.instantiateViewController(withIdentifier: "ProductListTableViewController") as! ProductListTableViewController
         navigationController?.pushViewController(productListTableViewController, animated: true)
     }
     
+    //MARK: -- Controller functions
     override func viewWillAppear(_ animated: Bool) {
         mainScreenStackView.configureView()
         setupConstraints()

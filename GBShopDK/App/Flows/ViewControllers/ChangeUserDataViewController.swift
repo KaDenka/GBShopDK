@@ -104,7 +104,6 @@ class ChangeUserDataViewController: UIViewController {
     
     //MARK: -- Transfer functions
     private func transferToMainScreen() {
-        
         let mainViewController = self.storyboard?.instantiateViewController(withIdentifier: "MainScreenViewController") as! MainScreenViewController
         navigationController?.pushViewController(mainViewController, animated: true)
         
@@ -118,7 +117,6 @@ class ChangeUserDataViewController: UIViewController {
     }
     
     //MARK: -- Clear screen
-    
     private func clearScreen() {
         self.changeDataStackView.userIdTextField.text = ""
         self.changeDataStackView.userLoginTextField.text = ""
@@ -156,7 +154,6 @@ class ChangeUserDataViewController: UIViewController {
                 case .failure(let error):
                     self.showError(error.localizedDescription)
                 }
-                
                 logging(Logger.funcEnd)
             }
         }

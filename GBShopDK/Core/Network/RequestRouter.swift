@@ -25,7 +25,6 @@ extension RequestRouter {
     var fullUrl: URL {
         return baseUrl.appendingPathComponent(path)
     }
-    
     var encoding: RequestRouterEncoding {
         return .url
     }
