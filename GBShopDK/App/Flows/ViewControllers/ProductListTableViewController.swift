@@ -13,8 +13,6 @@ class ProductListTableViewController: UITableViewController {
     let cellReuseId = "ProductListTableViewCell"
     let factory = RequestFactory()
     var productList: [Product] = []
-    var cartList: [Product] = []
-    var defaults = UserDefaults.standard
     
     //MARK: -- Private functions
     private func showError(_ errorMessage: String) {
@@ -53,7 +51,8 @@ class ProductListTableViewController: UITableViewController {
     }
     
     private func transferToCart() {
-        
+        let cartViewController = self.storyboard?.instantiateViewController(withIdentifier: "CartViewController") as! CartViewController
+        navigationController?.pushViewController(cartViewController, animated: true)
     }
     
     private func saveAddedItemsToCart(items: [Product]) {
@@ -61,8 +60,6 @@ class ProductListTableViewController: UITableViewController {
     }
     
     @objc func cartButtonTapped (_ sender: UIBarButtonItem!) {
-        saveAddedItemsToCart(items: self.cartList)
-        self.cartList.removeAll()
         transferToCart()
     }
     
@@ -115,8 +112,7 @@ class ProductListTableViewController: UITableViewController {
             self.transferToProductReview()
         }
         if indexPath.row == 3 {
-            cartList.append(self.productList[indexPath.section])
-            print("item added")
+            CartSingletone.shared.cartList.append(self.productList[indexPath.section])
         }
     }
     

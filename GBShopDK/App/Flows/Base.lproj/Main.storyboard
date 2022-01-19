@@ -26,6 +26,7 @@
                         <segue destination="yd3-aW-yBg" kind="show" identifier="toChangeUserDataController" id="gWl-um-9ni"/>
                         <segue destination="xLI-OR-fXz" kind="show" identifier="toProductListTableViewController" id="jsp-fB-qXM"/>
                         <segue destination="Gwp-rC-ClT" kind="show" identifier="toProductAndReviewsController" id="Aza-Cn-jvn"/>
+                        <segue destination="0Dj-pD-kBd" kind="show" identifier="toCartViewController" id="9Vj-Zk-J2g"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lhs-nI-1Cb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -134,6 +135,9 @@
                                 </backgroundConfiguration>
                                 <color key="baseForegroundColor" red="0.39283311370000001" green="0.99984401460000005" blue="0.99608570340000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </buttonConfiguration>
+                            <connections>
+                                <action selector="cartButtonTapped:" destination="u80-oj-LO0" eventType="touchUpInside" id="Aax-ni-wJ8"/>
+                            </connections>
                         </button>
                     </subviews>
                     <viewLayoutGuide key="safeArea" id="7E4-CH-6X8"/>
@@ -702,6 +706,57 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w6i-hu-O3a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2088" y="-129"/>
+        </scene>
+        <!--Cart View Controller-->
+        <scene sceneID="BEp-Om-XbS">
+            <objects>
+                <viewController restorationIdentifier="CartViewController" storyboardIdentifier="CartViewController" id="0Dj-pD-kBd" customClass="CartViewController" customModule="GBShopDK" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yRd-I9-RlR">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="JHH-qd-Te2">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="468"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="468" id="LuR-pa-5ma"/>
+                                </constraints>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dal-R1-Hx8">
+                                <rect key="frame" x="12" y="508" width="390" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="390" id="RcA-pG-jgu"/>
+                                    <constraint firstAttribute="height" constant="80" id="k2l-YX-bOm"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Pay Cart">
+                                    <backgroundConfiguration key="background" cornerRadius="17">
+                                        <color key="backgroundColor" red="0.1829081021" green="0.45236653910000002" blue="0.66277426480000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="strokeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </backgroundConfiguration>
+                                    <color key="baseForegroundColor" red="0.39283311370000001" green="0.99984401460000005" blue="0.99608570340000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </buttonConfiguration>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6CB-Id-D8V"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="dal-R1-Hx8" firstAttribute="centerX" secondItem="JHH-qd-Te2" secondAttribute="centerX" id="QF6-8b-GnT"/>
+                            <constraint firstItem="JHH-qd-Te2" firstAttribute="top" secondItem="6CB-Id-D8V" secondAttribute="top" id="V7o-mg-y9i"/>
+                            <constraint firstItem="JHH-qd-Te2" firstAttribute="leading" secondItem="6CB-Id-D8V" secondAttribute="leading" id="hqc-e0-M36"/>
+                            <constraint firstItem="dal-R1-Hx8" firstAttribute="top" secondItem="JHH-qd-Te2" secondAttribute="bottom" constant="40" id="nW3-gY-aOt"/>
+                            <constraint firstItem="dal-R1-Hx8" firstAttribute="centerX" secondItem="yRd-I9-RlR" secondAttribute="centerX" id="qvM-Tk-z9f"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Uar-8h-EXo"/>
+                    <connections>
+                        <outlet property="payCartButton" destination="dal-R1-Hx8" id="6EH-s8-K3F"/>
+                        <outlet property="tableView" destination="JHH-qd-Te2" id="dtb-hn-oxB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iaZ-1A-mnM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2918.840579710145" y="-129.24107142857142"/>
         </scene>
     </scenes>
     <resources>

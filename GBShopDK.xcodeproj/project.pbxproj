@@ -42,6 +42,8 @@
 		CA652A1E2779CCCF00F1682B /* GetProductList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA652A1D2779CCCF00F1682B /* GetProductList.swift */; };
 		CA6A32ED2773439D00107C2F /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = CA6A32EC2773439D00107C2F /* Alamofire */; };
 		CA876A25279842DB003B7B43 /* CartSingletone.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA876A24279842DB003B7B43 /* CartSingletone.swift */; };
+		CA876A2727984D32003B7B43 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA876A2627984D32003B7B43 /* CartViewController.swift */; };
+		CA876A2927984E7E003B7B43 /* CartStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA876A2827984E7E003B7B43 /* CartStackView.swift */; };
 		CAA80A5827746B9F00E8D01D /* LoginStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA80A5727746B9F00E8D01D /* LoginStackView.swift */; };
 		CAAFF014275CF8C200BE30E8 /* DefaultResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAAFF013275CF8C200BE30E8 /* DefaultResult.swift */; };
 		CAAFF01A275CFD9A00BE30E8 /* RegistrationAndDataChangesFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAAFF019275CFD9A00BE30E8 /* RegistrationAndDataChangesFactory.swift */; };
@@ -125,6 +127,8 @@
 		CA652A102779ADBB00F1682B /* ProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewModel.swift; sourceTree = "<group>"; };
 		CA652A1D2779CCCF00F1682B /* GetProductList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetProductList.swift; sourceTree = "<group>"; };
 		CA876A24279842DB003B7B43 /* CartSingletone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartSingletone.swift; sourceTree = "<group>"; };
+		CA876A2627984D32003B7B43 /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
+		CA876A2827984E7E003B7B43 /* CartStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartStackView.swift; sourceTree = "<group>"; };
 		CAA80A5727746B9F00E8D01D /* LoginStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginStackView.swift; sourceTree = "<group>"; };
 		CAAFF013275CF8C200BE30E8 /* DefaultResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultResult.swift; sourceTree = "<group>"; };
 		CAAFF019275CFD9A00BE30E8 /* RegistrationAndDataChangesFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationAndDataChangesFactory.swift; sourceTree = "<group>"; };
@@ -397,6 +401,7 @@
 				CAA80A5727746B9F00E8D01D /* LoginStackView.swift */,
 				CAF575E92774A5D300A7AC14 /* RegistrationChangesStackView.swift */,
 				CAB2E8582775B2D000027EC7 /* MainScreenStackView.swift */,
+				CA876A2827984E7E003B7B43 /* CartStackView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -424,6 +429,7 @@
 				CAB2E85C2775C44300027EC7 /* ChangeUserDataViewController.swift */,
 				CA03C03C277AFF1300CB3370 /* ProductListTableViewController.swift */,
 				CAB35474277D8BE100570EF5 /* ProductAndReviewsTableViewController.swift */,
+				CA876A2627984D32003B7B43 /* CartViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -595,6 +601,7 @@
 				CAA80A5827746B9F00E8D01D /* LoginStackView.swift in Sources */,
 				CA010BD4276DD4220030301D /* CartProduct.swift in Sources */,
 				CA4FA055275A3AF400E8BF6B /* ErrorParser.swift in Sources */,
+				CA876A2927984E7E003B7B43 /* CartStackView.swift in Sources */,
 				CA4FA057275A3C1800E8BF6B /* ResponseCodable.swift in Sources */,
 				CABF8616275F9AC000870B23 /* ProductsRequests.swift in Sources */,
 				CAAFF01C275CFF5100BE30E8 /* RegistrationAndChanges.swift in Sources */,
@@ -606,6 +613,7 @@
 				CAD820C727744FAB0023DF0E /* LoginViewController.swift in Sources */,
 				CA61D93427564A4700B777A2 /* SceneDelegate.swift in Sources */,
 				CA4FA05F275A3CBB00E8BF6B /* User.swift in Sources */,
+				CA876A2727984D32003B7B43 /* CartViewController.swift in Sources */,
 				CA03C03D277AFF1300CB3370 /* ProductListTableViewController.swift in Sources */,
 				CAB35475277D8BE100570EF5 /* ProductAndReviewsTableViewController.swift in Sources */,
 				CA4FA053275A3ACE00E8BF6B /* AbstractErrorParser.swift in Sources */,

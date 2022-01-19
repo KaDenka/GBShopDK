@@ -77,11 +77,17 @@ class MainScreenViewController: UIViewController {
                 logging(Logger.funcEnd)
             }
         }
+        CartSingletone.shared.cartList.removeAll()
     }
     
     @IBAction func productListButtonTapped(_ sender: Any) {
         let productListTableViewController = self.storyboard?.instantiateViewController(withIdentifier: "ProductListTableViewController") as! ProductListTableViewController
         navigationController?.pushViewController(productListTableViewController, animated: true)
+    }
+    
+    @IBAction func cartButtonTapped(_ sender: Any) {
+        let cartViewController = self.storyboard?.instantiateViewController(withIdentifier: "CartViewController") as! CartViewController
+        navigationController?.pushViewController(cartViewController, animated: true)
     }
     
     //MARK: -- Controller functions
