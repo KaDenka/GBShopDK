@@ -41,6 +41,7 @@
 		CA652A112779ADBB00F1682B /* ProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA652A102779ADBB00F1682B /* ProductViewModel.swift */; };
 		CA652A1E2779CCCF00F1682B /* GetProductList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA652A1D2779CCCF00F1682B /* GetProductList.swift */; };
 		CA6A32ED2773439D00107C2F /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = CA6A32EC2773439D00107C2F /* Alamofire */; };
+		CA876A25279842DB003B7B43 /* CartSingletone.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA876A24279842DB003B7B43 /* CartSingletone.swift */; };
 		CAA80A5827746B9F00E8D01D /* LoginStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA80A5727746B9F00E8D01D /* LoginStackView.swift */; };
 		CAAFF014275CF8C200BE30E8 /* DefaultResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAAFF013275CF8C200BE30E8 /* DefaultResult.swift */; };
 		CAAFF01A275CFD9A00BE30E8 /* RegistrationAndDataChangesFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAAFF019275CFD9A00BE30E8 /* RegistrationAndDataChangesFactory.swift */; };
@@ -123,6 +124,7 @@
 		CA652A0E2779AD6700F1682B /* ProductListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListViewModel.swift; sourceTree = "<group>"; };
 		CA652A102779ADBB00F1682B /* ProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewModel.swift; sourceTree = "<group>"; };
 		CA652A1D2779CCCF00F1682B /* GetProductList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetProductList.swift; sourceTree = "<group>"; };
+		CA876A24279842DB003B7B43 /* CartSingletone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartSingletone.swift; sourceTree = "<group>"; };
 		CAA80A5727746B9F00E8D01D /* LoginStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginStackView.swift; sourceTree = "<group>"; };
 		CAAFF013275CF8C200BE30E8 /* DefaultResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultResult.swift; sourceTree = "<group>"; };
 		CAAFF019275CFD9A00BE30E8 /* RegistrationAndDataChangesFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationAndDataChangesFactory.swift; sourceTree = "<group>"; };
@@ -430,6 +432,7 @@
 			isa = PBXGroup;
 			children = (
 				CAD820CA2774519F0023DF0E /* Logger.swift */,
+				CA876A24279842DB003B7B43 /* CartSingletone.swift */,
 			);
 			path = ServiceLogic;
 			sourceTree = "<group>";
@@ -619,6 +622,7 @@
 				CA0BBE17276B2309002CA3FC /* ProductReview.swift in Sources */,
 				CAD820CF277458920023DF0E /* MainScreenViewController.swift in Sources */,
 				CA4FA064275A3CED00E8BF6B /* Auth.swift in Sources */,
+				CA876A25279842DB003B7B43 /* CartSingletone.swift in Sources */,
 				CA010BD7276DD4D00030301D /* CartOrderedProductsList.swift in Sources */,
 				CA652A1E2779CCCF00F1682B /* GetProductList.swift in Sources */,
 			);
