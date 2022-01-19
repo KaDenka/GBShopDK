@@ -31,7 +31,7 @@ class RegistrationChangesStackView: UIStackView {
     
     let model = RegistrationAndChangesViewModel()
     
-    
+    //MARK: -- Configuration functions
     func configRegistrationView() {
         registrationFormLabel.text = model.registrationFormLabel
         userIdLabel.text = model.userIdLabel

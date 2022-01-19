@@ -8,9 +8,8 @@
 import UIKit
 
 class AppNavigationViewController: UINavigationController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
 }

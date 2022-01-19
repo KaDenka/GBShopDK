@@ -21,7 +21,7 @@ class LoginStackView: UIStackView {
     @IBOutlet weak var registrationButton: UIButton!
     
     var model = LoginViewModel()
-   
+    
     //MARK: -- View Configuration function
     func configureView() {
         shopLogo.image = model.shopLogo

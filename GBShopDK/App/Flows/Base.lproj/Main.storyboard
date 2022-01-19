@@ -11,15 +11,20 @@
         <!--App Navigation View Controller-->
         <scene sceneID="9kJ-gB-uso">
             <objects>
-                <navigationController restorationIdentifier="AppNavigationViewController" storyboardIdentifier="AppNavigationViewController" navigationBarHidden="YES" id="o6S-fC-oUf" customClass="AppNavigationViewController" customModule="GBShopDK" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController restorationIdentifier="AppNavigationViewController" storyboardIdentifier="AppNavigationViewController" id="o6S-fC-oUf" customClass="AppNavigationViewController" customModule="GBShopDK" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="8Qa-lg-qHH">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="67L-Nt-Ozq">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Ym1-yz-Qso"/>
                         <segue destination="mnL-2h-XLb" kind="show" identifier="toRegistrationViewController" id="zeD-Pw-h8S"/>
                         <segue destination="u80-oj-LO0" kind="show" identifier="toMainScreenViewController" id="Kbq-WA-iSa"/>
                         <segue destination="yd3-aW-yBg" kind="show" identifier="toChangeUserDataController" id="gWl-um-9ni"/>
+                        <segue destination="xLI-OR-fXz" kind="show" identifier="toProductListTableViewController" id="jsp-fB-qXM"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lhs-nI-1Cb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -56,16 +61,16 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wR3-lc-ljm">
-                            <rect key="frame" x="0.0" y="0.0" width="326" height="500"/>
+                            <rect key="frame" x="0.0" y="0.0" width="326" height="400"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="500" id="JSb-Qq-RCN"/>
+                                <constraint firstAttribute="height" constant="400" id="JSb-Qq-RCN"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="38"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e4p-4T-5IX">
-                            <rect key="frame" x="0.0" y="520" width="326" height="80"/>
+                            <rect key="frame" x="0.0" y="420" width="326" height="80"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="80" id="e4f-5c-8wg"/>
                             </constraints>
@@ -82,7 +87,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="loL-Yp-cWv">
-                            <rect key="frame" x="0.0" y="620" width="326" height="31"/>
+                            <rect key="frame" x="0.0" y="520" width="326" height="80"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="80" id="0PZ-k1-ZcT"/>
                             </constraints>
@@ -98,11 +103,29 @@
                                 <action selector="logoutButtonTapped:" destination="u80-oj-LO0" eventType="touchUpInside" id="6Ak-Ad-iyy"/>
                             </connections>
                         </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XBd-GT-0DT">
+                            <rect key="frame" x="0.0" y="620" width="326" height="31"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="80" id="bih-iM-U3C"/>
+                            </constraints>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="Product List">
+                                <backgroundConfiguration key="background" cornerRadius="17">
+                                    <color key="backgroundColor" red="0.1829081021" green="0.45236653910000002" blue="0.66277426480000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="strokeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </backgroundConfiguration>
+                                <color key="baseForegroundColor" red="0.39283311370000001" green="0.99984401460000005" blue="0.99608570340000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </buttonConfiguration>
+                            <connections>
+                                <action selector="productListButtonTapped:" destination="u80-oj-LO0" eventType="touchUpInside" id="IA6-5m-qfO"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <viewLayoutGuide key="safeArea" id="7E4-CH-6X8"/>
                     <connections>
                         <outlet property="changeDataButton" destination="e4p-4T-5IX" id="Nbi-qr-vJN"/>
                         <outlet property="logoutButton" destination="loL-Yp-cWv" id="1v9-PD-eyN"/>
+                        <outlet property="productListButton" destination="XBd-GT-0DT" id="xuh-Jr-qmb"/>
                         <outlet property="wellcomeLabel" destination="wR3-lc-ljm" id="pUw-PQ-aWP"/>
                     </connections>
                 </stackView>
@@ -604,6 +627,52 @@
                 </stackView>
             </objects>
             <point key="canvasLocation" x="385.50724637681162" y="-129.24107142857142"/>
+        </scene>
+        <!--Product List Table View Controller-->
+        <scene sceneID="Q1H-8t-Eb9">
+            <objects>
+                <tableViewController restorationIdentifier="ProductListTableViewController" storyboardIdentifier="ProductListTableViewController" id="xLI-OR-fXz" customClass="ProductListTableViewController" customModule="GBShopDK" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="fvb-R7-Qf3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ProductListTableViewCell" rowHeight="183" id="Mtj-lN-c07">
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="183"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Mtj-lN-c07" id="lU8-aB-vwY">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="183"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="productName" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pda-J5-60S">
+                                            <rect key="frame" x="186" y="81" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="pda-J5-60S" firstAttribute="centerY" secondItem="lU8-aB-vwY" secondAttribute="centerY" id="NTv-AF-Pyw"/>
+                                        <constraint firstItem="pda-J5-60S" firstAttribute="centerX" secondItem="lU8-aB-vwY" secondAttribute="centerX" id="pxK-rK-6cq"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <constraints>
+                                    <constraint firstItem="pda-J5-60S" firstAttribute="centerY" secondItem="Mtj-lN-c07" secondAttribute="centerY" id="Gh2-Sf-OpU"/>
+                                    <constraint firstItem="pda-J5-60S" firstAttribute="centerX" secondItem="Mtj-lN-c07" secondAttribute="centerX" id="nX9-RL-I4d"/>
+                                </constraints>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="xLI-OR-fXz" id="IXm-Km-3Yr"/>
+                            <outlet property="delegate" destination="xLI-OR-fXz" id="Tio-D9-Urg"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="9XK-aM-S8J"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="79I-7U-Iww" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1253.6231884057972" y="-129.24107142857142"/>
         </scene>
     </scenes>
     <resources>

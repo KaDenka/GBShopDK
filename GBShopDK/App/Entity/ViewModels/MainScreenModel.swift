@@ -11,4 +11,5 @@ struct MainScreenModel {
     let wellcomeLabel: String = "Wellcome to our shop"
     let changeDataButtonLabel: String = "Change User Data"
     let logoutButtonLabel: String = "Logout"
+    let productsListButtonLabel: String = "Products List"
 }
