@@ -14,14 +14,18 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     let factory = RequestFactory()
     let cellId = "CartCell"
-    let cartList = CartSingletone.shared.cartList
     
-    private func titleConfiguration() {
+    private func firstConfiguration() {
         self.navigationItem.title = "Cart"
+        if CartSingletone.shared.cartList.count > 0 {
+            payCartButton.isHidden = false
+        } else {
+            payCartButton.isHidden = true
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
-       
+        
     }
     
     override func viewDidLoad() {
@@ -29,17 +33,43 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
-        titleConfiguration()
-
+        firstConfiguration()
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        if CartSingletone.shared.cartList.count > 0 {
+            return CartSingletone.shared.cartList.count
+        } else {
+            return 1
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CartCell", for: indexPath)
-        cell.textLabel?.text = "Have cell"
-        return cell
+        if CartSingletone.shared.cartList.count > 0 {
+            cell.textLabel?.text = CartSingletone.shared.cartList[indexPath.row].productName
+            return cell
+        } else {
+            cell.textLabel?.text = "Cart have no any items!"
+            return cell
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    // Устанавливаем заголовок левой скользящей кнопки по умолчанию
+    func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
+        return "Delete"
+    }
+    // Срабатывает при нажатии кнопки, которая появляется при левом смахивании
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        CartSingletone.shared.cartList.remove(at: indexPath.row)
+        self.tableView.reloadData()
+        if CartSingletone.shared.cartList.count == 0 {
+            payCartButton.isHidden = true
+        }
+        return
     }
 }
