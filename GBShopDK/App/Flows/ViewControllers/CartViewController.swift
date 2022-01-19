@@ -14,6 +14,9 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     let factory = RequestFactory()
     let cellId = "CartCell"
+    var user = RegistrationAndChangesUser(userId: 0, userLogin: "No", userPassword: "No", userName: "No", userLastname: "No", userEmail: "No", userCreditCard: "No", userBio: "No")
+    
+    // MARK: -- Private functions
     
     private func firstConfiguration() {
         self.navigationItem.title = "Cart"
@@ -24,18 +27,67 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    private func showError(_ errorMessage: String) {
+        let alert = UIAlertController(title: "Request error", message: errorMessage, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { _ in
+            self.transferToRegistrationForm()
+        }))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    private func showApprovedAlert() {
+        let alert = UIAlertController(title: "Purchase approved", message: "Your purchase was approved", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { _ in
+            self.transferToMainScreen()
+            CartSingletone.shared.cartList.removeAll()
+        }))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    private func transferToMainScreen() {
+        let mainScreenController = self.storyboard?.instantiateViewController(withIdentifier: "MainScreenViewController") as! MainScreenViewController
+        navigationController?.pushViewController(mainScreenController, animated: true)
+    }
+    
+    private func transferToRegistrationForm() {
+        let changeUserDataViewController = self.storyboard?.instantiateViewController(withIdentifier: "ChangeUserDataViewController") as! ChangeUserDataViewController
+        navigationController?.pushViewController(changeUserDataViewController, animated: true)
+    }
+    
+    private func getPaymentData() {
+        let factory = factory.makeGetRequestsFactory()
+        let getUserData = GetUserData(request: "get")
         
+        factory.getUserData(request: getUserData.request) { response in
+            DispatchQueue.main.async {
+                logging(Logger.funcStart)
+                logging(response)
+                switch response.result {
+                case .success(let success):
+                    self.user = success
+                case .failure(let error):
+                    self.showError(error.localizedDescription)
+                }
+                logging(Logger.funcEnd)
+            }
+        }
+    }
+    
+    //MARK: -- ViewController lifeCicle functions
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
+        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
+        getPaymentData()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView.delegate = self
-        self.tableView.dataSource = self
-        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
         firstConfiguration()
-        
     }
+    
+    //MARK: -- TableView functions
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if CartSingletone.shared.cartList.count > 0 {
@@ -51,7 +103,7 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
             cell.textLabel?.text = CartSingletone.shared.cartList[indexPath.row].productName
             return cell
         } else {
-            cell.textLabel?.text = "Cart have no any items!"
+            cell.textLabel?.text = "There is no any items!"
             return cell
         }
     }
@@ -59,11 +111,11 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
-    // Устанавливаем заголовок левой скользящей кнопки по умолчанию
+    
     func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
         return "Delete"
     }
-    // Срабатывает при нажатии кнопки, которая появляется при левом смахивании
+    
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         CartSingletone.shared.cartList.remove(at: indexPath.row)
         self.tableView.reloadData()
@@ -71,5 +123,15 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
             payCartButton.isHidden = true
         }
         return
+    }
+    
+    // MARK: -- Buttons actions
+    
+    @IBAction func payCartButtonTapped(_ sender: Any) {
+        if user.userCreditCard == "No" {
+            showError("There is no credit card data. Please fill the registration form.")
+        } else {
+            showApprovedAlert()
+        }
     }
 }

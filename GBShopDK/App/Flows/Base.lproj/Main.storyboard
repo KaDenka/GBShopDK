@@ -736,6 +736,9 @@
                                     </backgroundConfiguration>
                                     <color key="baseForegroundColor" red="0.39283311370000001" green="0.99984401460000005" blue="0.99608570340000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="payCartButtonTapped:" destination="0Dj-pD-kBd" eventType="touchUpInside" id="hZp-26-enS"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6CB-Id-D8V"/>
