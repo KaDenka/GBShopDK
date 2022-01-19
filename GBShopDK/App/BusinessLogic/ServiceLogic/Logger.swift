@@ -8,7 +8,6 @@
 import Foundation
 
 struct Logger: ExpressibleByStringLiteral {
-    
     let message: String
     
     init(stringLiteral value: String) {
@@ -26,7 +25,6 @@ func logging(_ logInstance: Logger, file: String = #file, funcName: String = #fu
 }
 
 extension Logger {
-    
     static var funcStart: Logger { "-->" }
     static var funcEnd: Logger { "<--" }
     static var call: Logger { "--" }
