@@ -117,6 +117,16 @@ class LoginViewController: UIViewController {
             let factory = requestFactory.makeAuthRequestFactory()
             let authUser = AuthUser(userLogin: self.loginStackView.loginTextField.text!, userPassword: self.loginStackView.passwordTextField.text!)
             
+//            var a = 1
+//            var b = 10
+//
+//            for i in 0..<10 {
+//                b -= 1
+//            }
+//            a /= b
+            
+//            fatalError("login btn")
+            
             factory.login(userLogin: authUser.userLogin, userPassword: authUser.userPassword) { response in
                 DispatchQueue.main.async {
                     logging(Logger.funcStart)
