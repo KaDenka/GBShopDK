@@ -501,6 +501,7 @@
 				CA61D92B27564A4700B777A2 /* Frameworks */,
 				CA61D92C27564A4700B777A2 /* Resources */,
 				C7E3E567DDE8FF317951B1F8 /* [CP] Embed Pods Frameworks */,
+				CA5FD8E4279E87D600B35C7E /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -705,6 +706,23 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GBShopDK/Pods-GBShopDK-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		CA5FD8E4279E87D600B35C7E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n";
 		};
 		D0B453458DC8E6D485B7FD22 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
