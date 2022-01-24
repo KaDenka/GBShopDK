@@ -1,0 +1,31 @@
+{
+  "configurations" : [
+    {
+      "id" : "DE60A0C5-74D0-4E16-A587-B572EA5FBB93",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "testTimeoutsEnabled" : true
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:GBShopDK.xcodeproj",
+        "identifier" : "CA61D94327564A4900B777A2",
+        "name" : "GBShopDKTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:GBShopDK.xcodeproj",
+        "identifier" : "CA61D94D27564A4900B777A2",
+        "name" : "GBShopDKUITests"
+      }
+    }
+  ],
+  "version" : 1
+}

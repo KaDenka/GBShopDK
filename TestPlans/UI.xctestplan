@@ -1,0 +1,24 @@
+{
+  "configurations" : [
+    {
+      "id" : "34B72C47-3289-490A-A35F-C5E97DA6CD66",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "testTimeoutsEnabled" : true
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:GBShopDK.xcodeproj",
+        "identifier" : "CA61D94D27564A4900B777A2",
+        "name" : "GBShopDKUITests"
+      }
+    }
+  ],
+  "version" : 1
+}
