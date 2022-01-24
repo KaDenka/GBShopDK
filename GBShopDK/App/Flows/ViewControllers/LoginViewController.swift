@@ -142,6 +142,10 @@ class LoginViewController: UIViewController {
             
             //            fatalError("login btn")
             
+            Analytics.logEvent("login", parameters: [
+                "userLogin": authUser.userLogin as NSObject
+            ])
+            
             factory.login(userLogin: authUser.userLogin, userPassword: authUser.userPassword) { response in
                 DispatchQueue.main.async {
                     logging(Logger.funcStart)
