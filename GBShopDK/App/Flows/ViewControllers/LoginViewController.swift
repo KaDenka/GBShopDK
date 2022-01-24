@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class LoginViewController: UIViewController {
     
@@ -13,6 +14,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var loginStackView: LoginStackView!
     
     let requestFactory = RequestFactory()
+    
     
     //MARK: -- Constraints settings
     private func setupConstraints() {
@@ -52,7 +54,20 @@ class LoginViewController: UIViewController {
     
     // MARK: -- Selectors
     @objc func keyboardWillShow(notification: NSNotification) {
-        guard let userInfo = notification.userInfo else { return }
+        guard let userInfo = notification.userInfo else {
+            let userInfo = [
+                NSLocalizedDescriptionKey: NSLocalizedString("The request failed.", comment: ""),
+                NSLocalizedFailureReasonErrorKey: NSLocalizedString("The response returned a 404.", comment: ""),
+                NSLocalizedRecoverySuggestionErrorKey: NSLocalizedString("Does this page exist?", comment: ""),
+                "ProductID": "GBShopDK",
+                "View": "LoginView"
+            ]
+            let error = NSError.init(domain: NSCocoaErrorDomain,
+                                     code: -1001,
+                                     userInfo: userInfo)
+            Crashlytics.crashlytics().record(error: error)
+            return
+        }
         
         var keyboardFrame: CGRect = (userInfo[UIResponder.keyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue
         var contentInset: UIEdgeInsets = self.scrollView.contentInset
@@ -117,15 +132,15 @@ class LoginViewController: UIViewController {
             let factory = requestFactory.makeAuthRequestFactory()
             let authUser = AuthUser(userLogin: self.loginStackView.loginTextField.text!, userPassword: self.loginStackView.passwordTextField.text!)
             
-//            var a = 1
-//            var b = 10
-//
-//            for i in 0..<10 {
-//                b -= 1
-//            }
-//            a /= b
+            //            var a = 1
+            //            var b = 10
+            //
+            //            for i in 0..<10 {
+            //                b -= 1
+            //            }
+            //            a /= b
             
-//            fatalError("login btn")
+            //            fatalError("login btn")
             
             factory.login(userLogin: authUser.userLogin, userPassword: authUser.userPassword) { response in
                 DispatchQueue.main.async {
