@@ -58,6 +58,7 @@
 		CAB2E8612775DE9E00027EC7 /* GetRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB2E8602775DE9E00027EC7 /* GetRequests.swift */; };
 		CAB2E8632775E1FD00027EC7 /* GetUserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB2E8622775E1FD00027EC7 /* GetUserData.swift */; };
 		CAB35475277D8BE100570EF5 /* ProductAndReviewsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB35474277D8BE100570EF5 /* ProductAndReviewsTableViewController.swift */; };
+		CAB3D02F279E83F4006AD148 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CAB3D02E279E83F4006AD148 /* GoogleService-Info.plist */; };
 		CABF8610275F97DC00870B23 /* ProductList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABF860F275F97DC00870B23 /* ProductList.swift */; };
 		CABF8612275F989A00870B23 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABF8611275F989A00870B23 /* Product.swift */; };
 		CABF8614275F9A0D00870B23 /* ProductsRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABF8613275F9A0D00870B23 /* ProductsRequestFactory.swift */; };
@@ -153,6 +154,7 @@
 		CAB2E8602775DE9E00027EC7 /* GetRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRequests.swift; sourceTree = "<group>"; };
 		CAB2E8622775E1FD00027EC7 /* GetUserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserData.swift; sourceTree = "<group>"; };
 		CAB35474277D8BE100570EF5 /* ProductAndReviewsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductAndReviewsTableViewController.swift; sourceTree = "<group>"; };
+		CAB3D02E279E83F4006AD148 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CABF860F275F97DC00870B23 /* ProductList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductList.swift; sourceTree = "<group>"; };
 		CABF8611275F989A00870B23 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		CABF8613275F9A0D00870B23 /* ProductsRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsRequestFactory.swift; sourceTree = "<group>"; };
@@ -321,6 +323,7 @@
 		CA61D93027564A4700B777A2 /* GBShopDK */ = {
 			isa = PBXGroup;
 			children = (
+				CAB3D02E279E83F4006AD148 /* GoogleService-Info.plist */,
 				CA61D961275665E400B777A2 /* App */,
 				CA61D9662756661C00B777A2 /* Core */,
 				CA61D9672756662500B777A2 /* Resources */,
@@ -483,7 +486,6 @@
 				987D7C784A22FA2D1227720B /* Pods-GBShopDKTests.debug.xcconfig */,
 				779F594B4DC3C15B5E338272 /* Pods-GBShopDKTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -584,7 +586,7 @@
 			);
 			mainGroup = CA61D92527564A4700B777A2;
 			packageReferences = (
-				CA6A32EB2773439D00107C2F /* XCRemoteSwiftPackageReference "Alamofire.git" */,
+				CA6A32EB2773439D00107C2F /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = CA61D92527564A4700B777A2;
 			projectDirPath = "";
@@ -603,6 +605,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA61D93E27564A4900B777A2 /* LaunchScreen.storyboard in Resources */,
+				CAB3D02F279E83F4006AD148 /* GoogleService-Info.plist in Resources */,
 				CA61D93B27564A4900B777A2 /* Assets.xcassets in Resources */,
 				CA61D93927564A4700B777A2 /* Main.storyboard in Resources */,
 			);
@@ -1167,7 +1170,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		CA6A32EB2773439D00107C2F /* XCRemoteSwiftPackageReference "Alamofire.git" */ = {
+		CA6A32EB2773439D00107C2F /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
 			requirement = {
@@ -1180,7 +1183,7 @@
 /* Begin XCSwiftPackageProductDependency section */
 		CA6A32EC2773439D00107C2F /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = CA6A32EB2773439D00107C2F /* XCRemoteSwiftPackageReference "Alamofire.git" */;
+			package = CA6A32EB2773439D00107C2F /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */

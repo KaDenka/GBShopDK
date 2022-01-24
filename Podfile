@@ -6,7 +6,8 @@ target 'GBShopDK' do
   use_frameworks!
 
   # Pods for GBShopDK
-pod 'Firebase'
+pod 'Firebase/Analytics'
+pod 'Firebase/Crashlytics'
 
 
   target 'GBShopDKTests' do
