@@ -21,6 +21,22 @@ platform :ios do
     # add actions here: https://docs.fastlane.tools/actions
 
     #check release branch
-    ensure_git_status_clean
+    #ensure_git_status_clean
+
+    #clear data
+    clear_derived_data
+    xcclean(
+      scheme: "GBShopDK",
+      workspace: "GBShopDK.xcworkspace"
+      )
+
+    #update a dependencies
+    cocoapods(
+      use_bundle_exec: false
+      )
+
+    #run tests
+    run_tests
+    
   end
 end
